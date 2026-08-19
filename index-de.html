@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games Bucket List – Alle Spiele, die du irgendwann spielen willst.</title>
+  <meta name="description" content="Games Bucket List ist die App für iPhone und iPad für all die Spiele, die du irgendwann spielen willst. Aus jeder App speichern, Status verfolgen, Gespieltes bewerten – privat, offline nutzbar und über deine eigene iCloud synchronisiert.">
+  <meta name="theme-color" content="#4F46E5">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="de" href="index-de.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de">
+  <meta property="og:title" content="Games Bucket List – Alle Spiele, die du irgendwann spielen willst.">
+  <meta property="og:description" content="Speichere Spiele, die du eines Tages erleben möchtest – bevor du sie wieder vergisst. Für iPhone und iPad.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/landing.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+<svg class="gbl-icons" aria-hidden="true"><defs><symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6.5 11.5h3.5M8.25 9.75v3.5M15.5 12.2h.01M18 10.2h.01"/><path d="M17.3 5.5H6.7A4.7 4.7 0 0 0 2 10.2v3.6a3.9 3.9 0 0 0 6.5 2.9l.7-.6h5.6l.7.6a3.9 3.9 0 0 0 6.5-2.9v-3.6a4.7 4.7 0 0 0-4.7-4.7Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="m21 21-4.7-4.7"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15.5V3.5"/><path d="m8 7 4-3.5L16 7"/><path d="M5 13v6.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V13"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5A7 7 0 1 0 5.5 16"/><path d="M6 19.5h11.5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V9M18 20V4M6 20v-6"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 17.5 6.2 20.6l1.1-6.5L2.6 9.5l6.5-1Z"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M10.5 6.5h10M10.5 12h10M10.5 17.5h10"/><path d="m3 6.3 1.4 1.4L7 5.2M3 11.8l1.4 1.4L7 10.7M3 17.3l1.4 1.4L7 16.2"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9Z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="10.5" width="17" height="11" rx="2.5"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4 5.7v5.6c0 4.6 3.2 8.6 8 10.2 4.8-1.6 8-5.6 8-10.2V5.7Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.4-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="4" height="15" rx="1.4"/><rect x="13.5" y="4.5" width="4" height="15" rx="1.4"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3.5h12a1 1 0 0 1 1 1v16l-7-4.6L5 20.5v-16a1 1 0 0 1 1-1Z"/></symbol><symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-tablet" viewBox="0 0 24 24"><rect x="3.5" y="2" width="17" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8.2 8.2h.01M15.8 8.2h.01M12 12h.01M8.2 15.8h.01M15.8 15.8h.01"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.6 12h18.8"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4.5v15"/><path d="m6 13.5 6 6 6-6"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 21.5a9.5 9.5 0 1 1 9.5-9.5c0 2-1.6 3.2-3.2 3.2h-1.9a2.1 2.1 0 0 0-1.5 3.6 1.9 1.9 0 0 1-1.4 2.7 9.7 9.7 0 0 1-1.5.1Z"/><path d="M7.5 11h.01M10 7.2h.01M14.5 7.2h.01"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9 4.7-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7"/><path d="m3 17.2 9 4.7 9-4.7"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10.2 9-7.2 9 7.2V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9.2 22v-8h5.6v8"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 14.6a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.3a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.3a2 2 0 1 1 0-4h.2a1.6 1.6 0 0 0 1.1-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h.1a1.6 1.6 0 0 0 1-1.5v-.3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.3a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.5 1Z"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M3.5 5.5h17l-6.6 7.8v5.9l-3.8 2v-7.9Z"/></symbol><symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.6 6.2A9.7 9.7 0 0 1 12 6c5.5 0 9.5 6 9.5 6a17 17 0 0 1-3 3.6"/><path d="M6.6 7.6A17 17 0 0 0 2.5 12S6.5 18 12 18a9.6 9.6 0 0 0 4.1-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="m3 3 18 18"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.8V12l3.4 2"/></symbol><symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 8.5a14 14 0 0 1 19 0"/><path d="M6 12.2a9 9 0 0 1 12 0"/><path d="M9.4 15.8a4.2 4.2 0 0 1 5.2 0"/><path d="M12 19.2h.01"/></symbol><symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7.5" width="17" height="9" rx="2.6"/><path d="M21.5 11v2"/><rect x="4" y="9.5" width="12" height="5" rx="1.2" fill="currentColor" stroke="none"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.1a5.4 5.4 0 0 0-7.7 0L12 6.2l-1.1-1.1a5.4 5.4 0 1 0-7.7 7.7l8.8 8.7 8.8-8.7a5.4 5.4 0 0 0 0-7.7Z"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3.5h9.5L19 8v12.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1Z"/><path d="M14 3.6V8h4.6"/><path d="M8 13h8M8 17h5"/></symbol><symbol id="i-offline" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5 7 7 0 0 0-9.6-5"/><path d="M5.4 7.6A7 7 0 0 0 5.5 16"/><path d="M6 19.5h11.5"/><path d="m3 3 18 18"/></symbol></defs></svg>
+<svg class="gbl-defs" aria-hidden="true"><defs><linearGradient id="kblBand" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".14" stop-color="#c2c7cd"/><stop offset=".34" stop-color="#8e959d"/><stop offset=".56" stop-color="#40454c"/><stop offset=".78" stop-color="#8e959d"/><stop offset=".92" stop-color="#c2c7cd"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblBtn" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".4" stop-color="#8e959d"/><stop offset=".75" stop-color="#40454c"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblEdge" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgba(255,255,255,.65)"/><stop offset=".18" stop-color="rgba(255,255,255,.16)"/><stop offset=".55" stop-color="rgba(255,255,255,.04)"/><stop offset=".86" stop-color="rgba(255,255,255,.22)"/><stop offset="1" stop-color="rgba(255,255,255,.36)"/></linearGradient><linearGradient id="kblBezel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b1d22"/><stop offset=".32" stop-color="#020305"/><stop offset=".76" stop-color="#090a0d"/><stop offset="1" stop-color="#2b2d32"/></linearGradient><linearGradient id="kblIsland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0e11"/><stop offset=".35" stop-color="#010102"/><stop offset="1" stop-color="#07080a"/></linearGradient><radialGradient id="kblLens" cx=".38" cy=".34" r=".85"><stop offset="0" stop-color="#12233a"/><stop offset=".45" stop-color="#081019"/><stop offset="1" stop-color="#03060a"/></radialGradient></defs></svg>
+
+<!-- ══ NAV ══ -->
+<nav class="nav-blur sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="index-de.html" class="flex items-center gap-2.5">
+      <span class="w-8 h-8 rounded-[10px] grid place-items-center text-white" style="background:linear-gradient(140deg,#4F46E5,#D946EF)">
+        <svg class="ico" style="width:17px;height:17px" aria-hidden="true"><use href="#i-gamepad"/></svg>
+      </span>
+      <span class="font-bold tracking-tight whitespace-nowrap text-[15px] sm:text-base" style="font-family:'Space Grotesk',sans-serif">Games Bucket List</span>
+    </a>
+    <div class="flex items-center gap-2 sm:gap-5">
+      <a href="#how" class="nav-link hidden md:inline">So funktioniert's</a>
+      <a href="#features" class="nav-link hidden md:inline">Funktionen</a>
+      <a href="#privacy" class="nav-link hidden md:inline">Datenschutz</a>
+      <button id="theme-toggle" class="icon-btn" aria-label="Dunkelmodus umschalten">
+        <svg class="ico" id="theme-icon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <a href="index.html" class="nav-link" hreflang="en">EN</a>
+      <a href="#notify" class="btn-nav">
+        <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span class="hidden sm:inline">Benachrichtigen</span><span class="sm:hidden">Bescheid</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-1">
+
+  <!-- ══ HERO ══ -->
+  <header class="relative overflow-hidden">
+    <div class="glow" style="top:-260px;right:-140px"></div>
+    <div class="glow glow-2" style="top:120px;left:-300px"></div>
+
+    <div class="max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-[1.05fr_.95fr] gap-14 items-center relative">
+      <div>
+        <p class="eyebrow flex items-center gap-2 mb-5 reveal">
+          <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-sparkle"/></svg>
+          iPhone &amp; iPad · Bald verfügbar
+        </p>
+        <h1 class="display mb-6 reveal d1">
+          Die Spiele, die du<br>irgendwann <span class="grad-text">spielst.</span>
+        </h1>
+        <p class="body-lg max-w-xl mb-9 reveal d2">
+          Du siehst einen Trailer, jemand schwärmt dir etwas vor, ein Sale blitzt vorbei — drei Wochen später ist es weg.
+          Games Bucket List sammelt sie alle in einer Bibliothek: gefunden, sortiert und gemerkt,
+          <em class="not-italic font-semibold" style="color:var(--text-pri)">bevor du sie wieder vergisst.</em>
+        </p>
+        <div class="flex flex-wrap gap-3 mb-8 reveal d3">
+          <!-- TODO: href durch die App-Store-URL ersetzen, sobald die App live ist -->
+          <a href="#notify" class="btn-primary">
+            <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> Bald im App Store
+          </a>
+          <a href="#how" class="btn-outline">
+            <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg> So funktioniert's
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-2.5 reveal d4">
+          <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-smartphone"/></svg> iPhone</span>
+          <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-tablet"/></svg> iPad</span>
+          <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg> iCloud-Sync</span>
+          <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Deutsch &amp; Englisch</span>
+        </div>
+      </div>
+
+      <!-- Hero-Phone -->
+      <div class="hero-stage flex justify-center lg:justify-end reveal d2">
+        <div class="hero-float">
+          <div class="hero-phone-3d">
+            <div class="device-phone" style="width:min(262px,66vw);--screen-r:20px">
+              <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
+              <div class="dev-screen">
+                <div class="scr">
+                  <div class="m-status">
+                    <span>9:41</span>
+                    <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                      <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                    </span>
+                  </div>
+                  <div class="m-body">
+                    <div class="m-head">
+                      <div>
+                        <div class="m-h1">Hallo, Alex</div>
+                        <div class="m-sub">Deine Sammlung im Überblick</div>
+                      </div>
+                      <div class="m-ava">A</div>
+                    </div>
+                    <div class="m-stats">
+                      <div class="m-stat"><b>42</b><span>Gespeichert</span></div>
+                      <div class="m-stat"><b>3</b><span>Läuft</span></div>
+                      <div class="m-stat"><b>18</b><span>Fertig</span></div>
+                    </div>
+                    <div class="m-sec">Zuletzt hinzugefügt <em>Alle</em></div>
+                    <div class="m-row">
+                      <div class="m-cover cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow Knight: Silksong</div>
+                        <div class="m-meta">Switch · Metroidvania · 2025</div>
+                      </div>
+                      <span class="m-badge planned" style="margin-left:auto">Geplant</span>
+                    </div>
+                    <div class="m-row">
+                      <div class="m-cover cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Elden Ring</div>
+                        <div class="m-meta">PS5 · Action-RPG · 2022</div>
+                      </div>
+                      <span class="m-badge playing" style="margin-left:auto">Läuft</span>
+                    </div>
+                    <div class="m-row">
+                      <div class="m-cover cv3"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Stardew Valley</div>
+                        <div class="m-meta">iOS · Simulation · 2016</div>
+                      </div>
+                      <span class="m-badge done" style="margin-left:auto">Fertig</span>
+                    </div>
+                  </div>
+                  <div class="m-tabs">
+                    <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Bibliothek</span>
+                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Listen</span>
+                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
+                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Mehr</span>
+                  </div>
+                </div>
+              </div>
+              <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ SO FUNKTIONIERT'S ══ -->
+  <section id="how" class="section" style="background:var(--surface);border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-14">
+        <p class="eyebrow flex items-center gap-2 mb-4 reveal">
+          <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-layers"/></svg> So funktioniert's
+        </p>
+        <h2 class="headline mb-5 reveal d1">Von „das spiel ich mal“ zu „das spiel ich jetzt“.</h2>
+        <p class="body-lg reveal d2">Drei Schritte — und keiner davon heißt „Konto anlegen“.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-7 reveal d1">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="step-num">1</span>
+            <svg class="ico ico-step" style="color:var(--accent)" aria-hidden="true"><use href="#i-share"/></svg>
+          </div>
+          <h3 class="title3 mb-2.5">Überall wegspeichern</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Teile einen Link oder ein Stück Text aus Safari, einer Video-App oder dem Gruppenchat direkt in deine
+            Bibliothek — das Teilen-Menü macht den Rest. Lieber tippen? Durchsuche den eingebauten Spielekatalog nach dem Titel.
+          </p>
+        </div>
+        <div class="card p-7 reveal d2">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="step-num">2</span>
+            <svg class="ico ico-step" style="color:var(--spark)" aria-hidden="true"><use href="#i-filter"/></svg>
+          </div>
+          <h3 class="title3 mb-2.5">Sortieren, wie du willst</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Geplant, Wird gespielt, Abgeschlossen, Pausiert oder Abgebrochen. Dazu eine Bewertung von eins bis fünf,
+            eine Notiz für später und Listen für Koop-Abende, den Urlaub oder deine ewigen Favoriten.
+          </p>
+        </div>
+        <div class="card p-7 reveal d3">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="step-num">3</span>
+            <svg class="ico ico-step" style="color:var(--disco)" aria-hidden="true"><use href="#i-chart"/></svg>
+          </div>
+          <h3 class="title3 mb-2.5">Das große Ganze sehen</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Insights macht aus deiner Bibliothek ein Bild: wie ausgewogen dein Backlog ist, welche Genres und
+            Plattformen du wirklich spielst und wie du bewertest, was du durchspielst.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FUNKTIONEN ══ -->
+  <section id="features" class="section">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-14">
+        <p class="eyebrow flex items-center gap-2 mb-4 reveal">
+          <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-gamepad"/></svg> Funktionen
+        </p>
+        <h2 class="headline mb-5 reveal d1">Gebaut für ein Backlog, das immer weiter wächst.</h2>
+        <p class="body-lg reveal d2">Alles hier steckt in Version 1.0 — keine Zusatzpakete, kein Verkaufsgespräch mitten im Satz.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-7 reveal d1">
+          <div class="feat-icon mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-search"/></svg></div>
+          <h3 class="title3 mb-2.5">Ein Katalog, der mitdenkt</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Tippe einen Titel — der Katalog ergänzt Plattform, Genre, Erscheinungsjahr und Cover.
+            Gibt es mehrere Editionen, wählst du die richtige selbst aus.
+          </p>
+        </div>
+        <div class="card p-7 reveal d2">
+          <div class="feat-icon spark mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-share"/></svg></div>
+          <h3 class="title3 mb-2.5">Aus jeder App speichern</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Die Share Extension macht aus einem Link oder einem Textschnipsel mit einem Tipp einen Bibliothekseintrag.
+            Die Quelle bleibt verknüpft — du kommst immer dorthin zurück, wo du es gefunden hast.
+          </p>
+        </div>
+        <div class="card p-7 reveal d3">
+          <div class="feat-icon disco mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-play"/></svg></div>
+          <h3 class="title3 mb-2.5">Fünf ehrliche Status</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Geplant, Wird gespielt, Abgeschlossen, Pausiert, Abgebrochen. Denn „nach zwei Stunden abgebrochen“
+            gehört genauso in die Bibliothek.
+          </p>
+        </div>
+        <div class="card p-7 reveal d1">
+          <div class="feat-icon mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <h3 class="title3 mb-2.5">Bewertungen und Notizen</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Tippe auf einen Stern für deine Bewertung von eins bis fünf und schreib auf, was hängen geblieben ist —
+            das Ende, der Soundtrack, die Person, die es dir aufgeschwatzt hat.
+          </p>
+        </div>
+        <div class="card p-7 reveal d2">
+          <div class="feat-icon spark mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-list"/></svg></div>
+          <h3 class="title3 mb-2.5">Listen für jeden Anlass</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Gruppiere Spiele für Koop-Abende, Reisen, Favoriten oder was auch immer kommt — jede Liste mit eigener
+            Farbe und eigenem Symbol. Ein Spiel darf in mehreren Listen liegen.
+          </p>
+        </div>
+        <div class="card p-7 reveal d3">
+          <div class="feat-icon disco mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-chart"/></svg></div>
+          <h3 class="title3 mb-2.5">Insights statt Hausaufgaben</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Ring- oder Balkendiagramm deiner Bibliothek, deine häufigsten Genres und Plattformen und deine
+            Durchschnittsbewertung. Alles aus dem, was ohnehin schon drinsteht.
+          </p>
+        </div>
+        <div class="card p-7 reveal d1">
+          <div class="feat-icon mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-dice"/></svg></div>
+          <h3 class="title3 mb-2.5">Keine Lust zu entscheiden?</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            „Zufälliges Spiel“ zieht einen Eintrag aus deiner Liste und legt ihn dir hin.
+            Abend gerettet, ganz ohne Scrollen.
+          </p>
+        </div>
+        <div class="card p-7 reveal d2">
+          <div class="feat-icon spark mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-cloud"/></svg></div>
+          <h3 class="title3 mb-2.5">Deine iCloud, deine Bibliothek</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Die Bibliothek liegt auf deinem Gerät und synchronisiert über deinen eigenen iCloud-Account auf deine
+            anderen Geräte. Keine iCloud oder kein Netz? Läuft lokal einfach weiter.
+          </p>
+        </div>
+        <div class="card p-7 reveal d3">
+          <div class="feat-icon disco mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-palette"/></svg></div>
+          <h3 class="title3 mb-2.5">Mach sie dir passend</h3>
+          <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
+            Kacheln oder Karussell, hell oder dunkel, Deutsch oder Englisch. Dazu dein Name und ein Avatar —
+            ein Foto oder einer, den du auf unterstützten Geräten mit Image Playground erstellst.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCREENS ══ -->
+  <section id="screens" class="section" style="background:var(--surf-muted);border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-14">
+        <p class="eyebrow flex items-center gap-2 mb-4 reveal">
+          <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-smartphone"/></svg> Ein Blick hinein
+        </p>
+        <h2 class="headline mb-5 reveal d1">Vertraut, wo es zählt. Ruhig überall sonst.</h2>
+        <p class="body-lg reveal d2">Natives SwiftUI, Systemschrift, hell und dunkel — die App richtet sich nach deinem iPhone, nicht nach einem Brand Guide.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-10 sm:gap-6 justify-items-center">
+
+        <!-- Bibliothek -->
+        <div class="reveal d1 w-full flex flex-col items-center">
+          <div class="device-phone" style="width:min(232px,74vw);--screen-r:17px">
+            <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
+            <div class="dev-screen">
+              <div class="scr">
+                <div class="m-status">
+                  <span>9:41</span>
+                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                  </span>
+                </div>
+                <div class="m-body">
+                  <div class="m-head">
+                    <div class="m-h1">Bibliothek</div>
+                    <svg class="ico" style="width:calc(var(--u)*17);height:calc(var(--u)*17);color:var(--m-accent)" aria-hidden="true"><use href="#i-filter"/></svg>
+                  </div>
+                  <div class="m-chips">
+                    <span class="m-chip on">Alle</span>
+                    <span class="m-chip">Geplant</span>
+                    <span class="m-chip">Läuft</span>
+                    <span class="m-chip">Fertig</span>
+                  </div>
+                  <div class="m-grid">
+                    <div class="m-tile">
+                      <div class="m-art cv4"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Läuft</span></div>
+                      <div class="m-info"><div class="m-title">Hades II</div><div class="m-stars">★★★★★</div></div>
+                    </div>
+                    <div class="m-tile">
+                      <div class="m-art cv6"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Fertig</span></div>
+                      <div class="m-info"><div class="m-title">Baldur's Gate 3</div><div class="m-stars">★★★★★</div></div>
+                    </div>
+                    <div class="m-tile">
+                      <div class="m-art cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Geplant</span></div>
+                      <div class="m-info"><div class="m-title">Metroid Prime 4</div><div class="m-stars" style="color:var(--m-txt2)">Ohne Wertung</div></div>
+                    </div>
+                    <div class="m-tile">
+                      <div class="m-art cv3"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Pausiert</span></div>
+                      <div class="m-info"><div class="m-title">Cyberpunk 2077</div><div class="m-stars">★★★★<span style="color:var(--m-txt2)">★</span></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="m-tabs">
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Bibliothek</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Listen</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Mehr</span>
+                </div>
+              </div>
+            </div>
+            <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
+          </div>
+          <p class="dev-label"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg> Bibliothek — Kacheln oder Karussell</p>
+        </div>
+
+        <!-- Insights -->
+        <div class="reveal d2 w-full flex flex-col items-center">
+          <div class="device-phone" style="width:min(232px,74vw);--screen-r:17px">
+            <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
+            <div class="dev-screen">
+              <div class="scr">
+                <div class="m-status">
+                  <span>9:41</span>
+                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                  </span>
+                </div>
+                <div class="m-body">
+                  <div class="m-head">
+                    <div>
+                      <div class="m-h1">Insights</div>
+                      <div class="m-sub">Auf einen Blick</div>
+                    </div>
+                  </div>
+                  <div class="m-ringwrap">
+                    <div class="m-ring"><div class="m-ring-in"><b>42</b><span>Spiele</span></div></div>
+                  </div>
+                  <div class="m-legend">
+                    <span class="m-leg"><i style="background:var(--m-accent)"></i>Geplant <b>43%</b></span>
+                    <span class="m-leg"><i style="background:#D946EF"></i>Läuft <b>19%</b></span>
+                    <span class="m-leg"><i style="background:#22D3EE"></i>Fertig <b>16%</b></span>
+                    <span class="m-leg"><i style="background:#E9A13B"></i>Pausiert <b>12%</b></span>
+                  </div>
+                  <div class="m-sec" style="margin-bottom:calc(var(--u)*10)">Top-Genres</div>
+                  <div class="m-barrow">
+                    <div class="m-barlabel"><span>Rollenspiel</span><span>38%</span></div>
+                    <div class="m-bar"><i style="width:38%"></i></div>
+                  </div>
+                  <div class="m-barrow">
+                    <div class="m-barlabel"><span>Action</span><span>26%</span></div>
+                    <div class="m-bar"><i style="width:26%"></i></div>
+                  </div>
+                  <div class="m-barrow">
+                    <div class="m-barlabel"><span>Indie</span><span>19%</span></div>
+                    <div class="m-bar"><i style="width:19%"></i></div>
+                  </div>
+                </div>
+                <div class="m-tabs">
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Bibliothek</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Listen</span>
+                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Mehr</span>
+                </div>
+              </div>
+            </div>
+            <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
+          </div>
+          <p class="dev-label"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg> Insights — Ring oder Balken</p>
+        </div>
+
+        <!-- Katalogsuche -->
+        <div class="reveal d3 w-full flex flex-col items-center">
+          <div class="device-phone" style="width:min(232px,74vw);--screen-r:17px">
+            <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
+            <div class="dev-screen">
+              <div class="scr">
+                <div class="m-status">
+                  <span>9:41</span>
+                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                  </span>
+                </div>
+                <div class="m-body">
+                  <div class="m-head">
+                    <div>
+                      <div class="m-h1">Spiel finden</div>
+                      <div class="m-sub">Katalog nach Titel durchsuchen</div>
+                    </div>
+                  </div>
+                  <div class="m-field">
+                    <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg> hollow knight
+                  </div>
+                  <div class="m-row">
+                    <div class="m-cover cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                    <div style="min-width:0">
+                      <div class="m-title">Hollow Knight</div>
+                      <div class="m-meta">Switch, PS4, PC · 2017</div>
+                    </div>
+                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                  </div>
+                  <div class="m-row">
+                    <div class="m-cover cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                    <div style="min-width:0">
+                      <div class="m-title">Hollow Knight: Silksong</div>
+                      <div class="m-meta">Switch, PC · 2025</div>
+                    </div>
+                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                  </div>
+                  <div class="m-row">
+                    <div class="m-cover cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                    <div style="min-width:0">
+                      <div class="m-title">Hollow Knight: Voidheart</div>
+                      <div class="m-meta">In deiner Bibliothek</div>
+                    </div>
+                    <span class="m-plus ghost"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+                  </div>
+                  <div class="m-row">
+                    <div class="m-cover cv4"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                    <div style="min-width:0">
+                      <div class="m-title">Hollow</div>
+                      <div class="m-meta">PC, Xbox One · 2017</div>
+                    </div>
+                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                  </div>
+                </div>
+                <div class="m-tabs">
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Bibliothek</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Listen</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
+                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Mehr</span>
+                </div>
+              </div>
+            </div>
+            <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
+          </div>
+          <p class="dev-label"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg> Katalog — ein Tipp zum Speichern</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DATENSCHUTZ ══ -->
+  <section id="privacy" class="band section relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 relative text-center">
+      <div class="cta-glyph reveal">
+        <svg class="ico ico-cta" aria-hidden="true"><use href="#i-shield"/></svg>
+      </div>
+      <h2 class="headline mb-5 reveal d1" style="color:#fff">Kein Konto. Kein Tracking. Keine Werbung.</h2>
+      <p class="body-lg band-sub max-w-2xl mx-auto mb-12 reveal d2" style="color:rgba(255,255,255,.72)">
+        Eine Bucket List ist etwas Persönliches. Games Bucket List hat keinen Login, kommt ohne Analytics-SDK
+        und verkauft niemandem die Information, dass du dieses eine Rollenspiel immer noch nicht durch hast.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-6 text-left">
+        <div class="rounded-2xl p-6 reveal d1" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)">
+          <svg class="ico ico-feat mb-4" style="color:#fff" aria-hidden="true"><use href="#i-smartphone"/></svg>
+          <h3 class="title3 mb-2" style="color:#fff">Bleibt auf deinem Gerät</h3>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.7)">
+            Spiele, Bewertungen, Notizen und Listen liegen lokal. Es gibt keinen Server von mir, auf dem deine
+            Bibliothek liegt.
+          </p>
+        </div>
+        <div class="rounded-2xl p-6 reveal d2" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)">
+          <svg class="ico ico-feat mb-4" style="color:#fff" aria-hidden="true"><use href="#i-cloud"/></svg>
+          <h3 class="title3 mb-2" style="color:#fff">Sync über deine iCloud</h3>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.7)">
+            Bist du bei iCloud angemeldet, wandert deine Bibliothek über deine eigene, private CloudKit-Datenbank
+            zwischen deinen Geräten — dort, wo auch deine übrigen Apple-Daten liegen.
+          </p>
+        </div>
+        <div class="rounded-2xl p-6 reveal d3" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)">
+          <svg class="ico ico-feat mb-4" style="color:#fff" aria-hidden="true"><use href="#i-eye-off"/></svg>
+          <h3 class="title3 mb-2" style="color:#fff">Nur die Suchanfrage geht raus</h3>
+          <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.7)">
+            Beim Nachschlagen bekommt der Katalogdienst den Titel — bei einem geteilten Link zusätzlich die Plattform
+            und die dortige Spiel-ID. Niemals deine Bibliothek, deine Bewertungen oder deine Notizen.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 reveal d4">
+        <a href="privacy-de.html" class="btn-ghost">
+          <svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Datenschutzerklärung lesen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABSCHLUSS-CTA ══ -->
+  <section id="notify" class="section">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="eyebrow flex items-center justify-center gap-2 mb-4 reveal">
+        <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-clock"/></svg> Fast so weit
+      </p>
+      <h2 class="headline mb-5 reveal d1">Games Bucket List kommt in den App Store.</h2>
+      <p class="body-lg mb-9 reveal d2">
+        Version 1.0 ist auf der Zielgeraden für iPhone und iPad. Du willst eine kurze Mail, wenn sie da ist?
+        Schreib mir eine Zeile — keine Liste, kein Newsletter, nur eine Antwort am Release-Tag.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center reveal d3">
+        <a href="mailto:peter@hildel.com?subject=Games%20Bucket%20List%20—%20Bescheid%20zum%20Release" class="btn-primary">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Mail zum Release
+        </a>
+        <a href="support-de.html" class="btn-outline">
+          <svg class="ico" aria-hidden="true"><use href="#i-note"/></svg> Fragen &amp; Support
+        </a>
+      </div>
+      <p class="text-xs mt-7 reveal d4" style="color:var(--text-ter)">
+        Benötigt ein aktuelles iPhone oder iPad. iCloud-Sync ist optional.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer py-10">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <span class="w-7 h-7 rounded-[9px] grid place-items-center text-white" style="background:linear-gradient(140deg,#4F46E5,#D946EF)">
+          <svg class="ico" style="width:15px;height:15px" aria-hidden="true"><use href="#i-gamepad"/></svg>
+        </span>
+        <span class="text-sm font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif">Games Bucket List</span>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-3 justify-center">
+        <a href="support-de.html">Support</a>
+        <a href="privacy-de.html">Datenschutz</a>
+        <a href="impressum-de.html">Impressum</a>
+        <a href="index.html" hreflang="en" style="color:var(--accent)">English</a>
+      </div>
+    </div>
+    <div class="divider my-7"></div>
+    <p class="text-center text-xs" style="color:var(--text-ter)">
+      © <span id="year">2026</span> Peter Hildel · Gemacht in Zirndorf.
+      Spieletitel und Artwork gehören ihren jeweiligen Rechteinhabern.
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* Theme-Umschalter */
+  const toggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  function paintIcon() {
+    const dark = document.documentElement.classList.contains('dark');
+    themeIcon.firstElementChild.setAttribute('href', dark ? '#i-sun' : '#i-moon');
+  }
+  paintIcon();
+  toggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    paintIcon();
+  });
+
+  /* Scroll-Reveal */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
