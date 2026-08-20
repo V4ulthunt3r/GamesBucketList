@@ -25,12 +25,15 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/landing.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/landing.css?v=9">
 </head>
 <body class="min-h-screen flex flex-col">
+<!-- The app's ambient mesh: slow coloured light behind an opaque base. -->
+<div class="ambient" aria-hidden="true"><i class="amb amb-1"></i><i class="amb amb-2"></i><i class="amb amb-3"></i><i class="amb amb-4"></i></div>
 
-<svg class="gbl-icons" aria-hidden="true"><defs><symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6.5 11.5h3.5M8.25 9.75v3.5M15.5 12.2h.01M18 10.2h.01"/><path d="M17.3 5.5H6.7A4.7 4.7 0 0 0 2 10.2v3.6a3.9 3.9 0 0 0 6.5 2.9l.7-.6h5.6l.7.6a3.9 3.9 0 0 0 6.5-2.9v-3.6a4.7 4.7 0 0 0-4.7-4.7Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="m21 21-4.7-4.7"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15.5V3.5"/><path d="m8 7 4-3.5L16 7"/><path d="M5 13v6.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V13"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5A7 7 0 1 0 5.5 16"/><path d="M6 19.5h11.5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V9M18 20V4M6 20v-6"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 17.5 6.2 20.6l1.1-6.5L2.6 9.5l6.5-1Z"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M10.5 6.5h10M10.5 12h10M10.5 17.5h10"/><path d="m3 6.3 1.4 1.4L7 5.2M3 11.8l1.4 1.4L7 10.7M3 17.3l1.4 1.4L7 16.2"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9Z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="10.5" width="17" height="11" rx="2.5"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4 5.7v5.6c0 4.6 3.2 8.6 8 10.2 4.8-1.6 8-5.6 8-10.2V5.7Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.4-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="4" height="15" rx="1.4"/><rect x="13.5" y="4.5" width="4" height="15" rx="1.4"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3.5h12a1 1 0 0 1 1 1v16l-7-4.6L5 20.5v-16a1 1 0 0 1 1-1Z"/></symbol><symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-tablet" viewBox="0 0 24 24"><rect x="3.5" y="2" width="17" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8.2 8.2h.01M15.8 8.2h.01M12 12h.01M8.2 15.8h.01M15.8 15.8h.01"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.6 12h18.8"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4.5v15"/><path d="m6 13.5 6 6 6-6"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 21.5a9.5 9.5 0 1 1 9.5-9.5c0 2-1.6 3.2-3.2 3.2h-1.9a2.1 2.1 0 0 0-1.5 3.6 1.9 1.9 0 0 1-1.4 2.7 9.7 9.7 0 0 1-1.5.1Z"/><path d="M7.5 11h.01M10 7.2h.01M14.5 7.2h.01"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9 4.7-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7"/><path d="m3 17.2 9 4.7 9-4.7"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10.2 9-7.2 9 7.2V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9.2 22v-8h5.6v8"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 14.6a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.3a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.3a2 2 0 1 1 0-4h.2a1.6 1.6 0 0 0 1.1-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h.1a1.6 1.6 0 0 0 1-1.5v-.3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.3a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.5 1Z"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M3.5 5.5h17l-6.6 7.8v5.9l-3.8 2v-7.9Z"/></symbol><symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.6 6.2A9.7 9.7 0 0 1 12 6c5.5 0 9.5 6 9.5 6a17 17 0 0 1-3 3.6"/><path d="M6.6 7.6A17 17 0 0 0 2.5 12S6.5 18 12 18a9.6 9.6 0 0 0 4.1-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="m3 3 18 18"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.8V12l3.4 2"/></symbol><symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 8.5a14 14 0 0 1 19 0"/><path d="M6 12.2a9 9 0 0 1 12 0"/><path d="M9.4 15.8a4.2 4.2 0 0 1 5.2 0"/><path d="M12 19.2h.01"/></symbol><symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7.5" width="17" height="9" rx="2.6"/><path d="M21.5 11v2"/><rect x="4" y="9.5" width="12" height="5" rx="1.2" fill="currentColor" stroke="none"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.1a5.4 5.4 0 0 0-7.7 0L12 6.2l-1.1-1.1a5.4 5.4 0 1 0-7.7 7.7l8.8 8.7 8.8-8.7a5.4 5.4 0 0 0 0-7.7Z"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3.5h9.5L19 8v12.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1Z"/><path d="M14 3.6V8h4.6"/><path d="M8 13h8M8 17h5"/></symbol><symbol id="i-offline" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5 7 7 0 0 0-9.6-5"/><path d="M5.4 7.6A7 7 0 0 0 5.5 16"/><path d="M6 19.5h11.5"/><path d="m3 3 18 18"/></symbol></defs></svg>
+
+<svg class="gbl-icons" aria-hidden="true"><defs><symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M6.5 11.5h3.5M8.25 9.75v3.5M15.5 12.2h.01M18 10.2h.01"/><path d="M17.3 5.5H6.7A4.7 4.7 0 0 0 2 10.2v3.6a3.9 3.9 0 0 0 6.5 2.9l.7-.6h5.6l.7.6a3.9 3.9 0 0 0 6.5-2.9v-3.6a4.7 4.7 0 0 0-4.7-4.7Z"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><path d="m21 21-4.7-4.7"/></symbol><symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15.5V3.5"/><path d="m8 7 4-3.5L16 7"/><path d="M5 13v6.5a1.5 1.5 0 0 0 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5V13"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5A7 7 0 1 0 5.5 16"/><path d="M6 19.5h11.5"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M12 20V9M18 20V4M6 20v-6"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5 1-4.7 4.6 1.1 6.5L12 17.5 6.2 20.6l1.1-6.5L2.6 9.5l6.5-1Z"/></symbol><symbol id="i-list" viewBox="0 0 24 24"><path d="M10.5 6.5h10M10.5 12h10M10.5 17.5h10"/><path d="m3 6.3 1.4 1.4L7 5.2M3 11.8l1.4 1.4L7 10.7M3 17.3l1.4 1.4L7 16.2"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9Z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="3.5" y="10.5" width="17" height="11" rx="2.5"/><path d="M7.5 10.5V7a4.5 4.5 0 0 1 9 0v3.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4 5.7v5.6c0 4.6 3.2 8.6 8 10.2 4.8-1.6 8-5.6 8-10.2V5.7Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"/></symbol><symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.8v14.4a.8.8 0 0 0 1.2.7l11.4-7.2a.8.8 0 0 0 0-1.4L8.2 4.1A.8.8 0 0 0 7 4.8Z"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.5" y="4.5" width="4" height="15" rx="1.4"/><rect x="13.5" y="4.5" width="4" height="15" rx="1.4"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol><symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3.5h12a1 1 0 0 1 1 1v16l-7-4.6L5 20.5v-16a1 1 0 0 1 1-1Z"/></symbol><symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-tablet" viewBox="0 0 24 24"><rect x="3.5" y="2" width="17" height="20" rx="2.5"/><path d="M12 18.5h.01"/></symbol><symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8.2 8.2h.01M15.8 8.2h.01M12 12h.01M8.2 15.8h.01M15.8 15.8h.01"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.6 12h18.8"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol><symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4.5v15"/><path d="m6 13.5 6 6 6-6"/></symbol><symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 21.5a9.5 9.5 0 1 1 9.5-9.5c0 2-1.6 3.2-3.2 3.2h-1.9a2.1 2.1 0 0 0-1.5 3.6 1.9 1.9 0 0 1-1.4 2.7 9.7 9.7 0 0 1-1.5.1Z"/><path d="M7.5 11h.01M10 7.2h.01M14.5 7.2h.01"/></symbol><symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/></symbol><symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2.8 9 4.7-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7"/><path d="m3 17.2 9 4.7 9-4.7"/></symbol><symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10.2 9-7.2 9 7.2V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9.2 22v-8h5.6v8"/></symbol><symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 14.6a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1v.3a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-2.8-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7h-.3a2 2 0 1 1 0-4h.2a1.6 1.6 0 0 0 1.1-2.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h.1a1.6 1.6 0 0 0 1-1.5v-.3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.3a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.5 1Z"/></symbol><symbol id="i-filter" viewBox="0 0 24 24"><path d="M3.5 5.5h17l-6.6 7.8v5.9l-3.8 2v-7.9Z"/></symbol><symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.6 6.2A9.7 9.7 0 0 1 12 6c5.5 0 9.5 6 9.5 6a17 17 0 0 1-3 3.6"/><path d="M6.6 7.6A17 17 0 0 0 2.5 12S6.5 18 12 18a9.6 9.6 0 0 0 4.1-.9"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="m3 3 18 18"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.8V12l3.4 2"/></symbol><symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 8.5a14 14 0 0 1 19 0"/><path d="M6 12.2a9 9 0 0 1 12 0"/><path d="M9.4 15.8a4.2 4.2 0 0 1 5.2 0"/><path d="M12 19.2h.01"/></symbol><symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7.5" width="17" height="9" rx="2.6"/><path d="M21.5 11v2"/><rect x="4" y="9.5" width="12" height="5" rx="1.2" fill="currentColor" stroke="none"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.1a5.4 5.4 0 0 0-7.7 0L12 6.2l-1.1-1.1a5.4 5.4 0 1 0-7.7 7.7l8.8 8.7 8.8-8.7a5.4 5.4 0 0 0 0-7.7Z"/></symbol><symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3.5h9.5L19 8v12.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1Z"/><path d="M14 3.6V8h4.6"/><path d="M8 13h8M8 17h5"/></symbol><symbol id="i-offline" viewBox="0 0 24 24"><path d="M17.5 19.5a4.75 4.75 0 0 0 .3-9.5 7 7 0 0 0-9.6-5"/><path d="M5.4 7.6A7 7 0 0 0 5.5 16"/><path d="M6 19.5h11.5"/><path d="m3 3 18 18"/></symbol><symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4.5h10v5a5 5 0 0 1-10 0Z"/><path d="M7 6H4.5v1.5A3.5 3.5 0 0 0 8 11M17 6h2.5v1.5A3.5 3.5 0 0 1 16 11"/><path d="M12 14.5v3M8.5 20.5h7l-.6-3h-5.8Z"/></symbol><symbol id="i-archive" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4.5" rx="1.6"/><path d="M4.8 8.5h14.4v10a2 2 0 0 1-2 2H6.8a2 2 0 0 1-2-2Z"/><path d="M10 13h4"/></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9.5 5.5 7 6.5-7 6.5"/></symbol><symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m7.8 12.3 2.9 2.9 5.5-6"/></symbol><symbol id="i-pie" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9h-9Z"/><path d="M14.5 2.6A9 9 0 0 1 21.4 9.5h-6.9Z"/></symbol><symbol id="i-books" viewBox="0 0 24 24"><rect x="3.5" y="4" width="4" height="16" rx="1.2"/><rect x="9.5" y="4" width="4" height="16" rx="1.2"/><path d="m16.2 5.4 3.2-.8 2.1 14.4-3.4.9Z"/></symbol><symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M9.5 3.5a2 2 0 0 1 4 0c0 .7-.4 1.1-.4 1.6 0 .5.4.9.9.9h2.7a1 1 0 0 1 1 1v2.7c0 .5.4.9.9.9.5 0 .9-.4 1.6-.4a2 2 0 0 1 0 4c-.7 0-1.1-.4-1.6-.4-.5 0-.9.4-.9.9v3.7a1 1 0 0 1-1 1h-3.7c-.5 0-.9-.4-.9-.9 0-.5.4-.9.4-1.6a2 2 0 0 0-4 0c0 .7.4 1.1.4 1.6 0 .5-.4.9-.9.9H4.5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.1c.5 0 .9-.4.9-.9 0-.5-.4-.9-.4-1.6Z"/></symbol><symbol id="i-mountain" viewBox="0 0 24 24"><path d="m2.5 19.5 6-9.5 4.2 6.6"/><path d="m9.8 19.5 5.4-8.5 6.3 8.5Z"/></symbol><symbol id="i-sort" viewBox="0 0 24 24"><path d="M7.5 4.5v15M7.5 4.5 4 8M7.5 4.5 11 8"/><path d="M16.5 19.5v-15M16.5 19.5 13 16M16.5 19.5 20 16"/></symbol><symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 18v-3M9 18v-7M15 18v-11M21 18V4" stroke-width="2.6"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></symbol><symbol id="i-sparkle-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.2-4.2"/><path d="M10.5 7.3l.9 2.3 2.3.9-2.3.9-.9 2.3-.9-2.3-2.3-.9 2.3-.9Z"/></symbol></defs></svg>
 <svg class="gbl-defs" aria-hidden="true"><defs><linearGradient id="kblBand" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".14" stop-color="#c2c7cd"/><stop offset=".34" stop-color="#8e959d"/><stop offset=".56" stop-color="#40454c"/><stop offset=".78" stop-color="#8e959d"/><stop offset=".92" stop-color="#c2c7cd"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblBtn" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".4" stop-color="#8e959d"/><stop offset=".75" stop-color="#40454c"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblEdge" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgba(255,255,255,.65)"/><stop offset=".18" stop-color="rgba(255,255,255,.16)"/><stop offset=".55" stop-color="rgba(255,255,255,.04)"/><stop offset=".86" stop-color="rgba(255,255,255,.22)"/><stop offset="1" stop-color="rgba(255,255,255,.36)"/></linearGradient><linearGradient id="kblBezel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b1d22"/><stop offset=".32" stop-color="#020305"/><stop offset=".76" stop-color="#090a0d"/><stop offset="1" stop-color="#2b2d32"/></linearGradient><linearGradient id="kblIsland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0e11"/><stop offset=".35" stop-color="#010102"/><stop offset="1" stop-color="#07080a"/></linearGradient><radialGradient id="kblLens" cx=".38" cy=".34" r=".85"><stop offset="0" stop-color="#12233a"/><stop offset=".45" stop-color="#081019"/><stop offset="1" stop-color="#03060a"/></radialGradient></defs></svg>
 
 <!-- ══ NAV ══ -->
@@ -40,7 +43,7 @@
       <span class="w-8 h-8 rounded-[10px] grid place-items-center text-white" style="background:linear-gradient(140deg,#4F46E5,#D946EF)">
         <svg class="ico" style="width:17px;height:17px" aria-hidden="true"><use href="#i-gamepad"/></svg>
       </span>
-      <span class="font-bold tracking-tight whitespace-nowrap text-[15px] sm:text-base" style="font-family:'Space Grotesk',sans-serif">Games Bucket List</span>
+      <span class="font-bold tracking-tight whitespace-nowrap text-[15px] sm:text-base" style="font-family:Nunito,sans-serif">Games Bucket List</span>
     </a>
     <div class="flex items-center gap-2 sm:gap-5">
       <a href="#how" class="nav-link hidden md:inline">How it works</a>
@@ -103,58 +106,55 @@
               <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
               <div class="dev-screen">
                 <div class="scr">
+                  <div class="m-amb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
                   <div class="m-status">
                     <span>9:41</span>
                     <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                      <svg class="ico" aria-hidden="true"><use href="#i-signal"/></svg>
                       <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
                       <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
                     </span>
                   </div>
+                  <div class="m-navtitle">Home</div>
                   <div class="m-body">
-                    <div class="m-head">
-                      <div>
-                        <div class="m-h1">Hello, Alex</div>
-                        <div class="m-sub">Your collection overview</div>
-                      </div>
-                      <div class="m-ava">A</div>
+                    <div class="m-head" style="justify-content:flex-start;gap:calc(var(--u)*11);margin-top:calc(var(--u)*4)">
+                      <span class="m-ava"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-user"/></svg></span>
+                      <div class="m-h1">Your library</div>
                     </div>
+                    <div class="m-sec" style="margin-top:0">At a Glance</div>
                     <div class="m-stats">
-                      <div class="m-stat"><b>42</b><span>Saved</span></div>
-                      <div class="m-stat"><b>3</b><span>Playing</span></div>
-                      <div class="m-stat"><b>18</b><span>Completed</span></div>
+                      <div class="m-stat"><span class="lbl" style="color:var(--m-planned)"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Saved</span><b>44</b></div>
+                      <div class="m-stat"><span class="lbl" style="color:var(--m-playing)"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-play"/></svg>Playing</span><b>2</b></div>
+                      <div class="m-stat"><span class="lbl" style="color:var(--m-completed)"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg>Completed</span><b>15</b></div>
                     </div>
-                    <div class="m-sec">Recently Added <em>Show all</em></div>
-                    <div class="m-row">
-                      <div class="m-cover cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                      <div style="min-width:0">
-                        <div class="m-title">Hollow Knight: Silksong</div>
-                        <div class="m-meta">Switch · Metroidvania · 2025</div>
+                    <div class="m-sec">Recently Added <em>View Library</em></div>
+                    <div class="m-grid">
+                      <div>
+                        <div class="m-art cv6"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span></div>
+                        <div class="m-info"><div class="m-title">Simon the Sorcerer</div></div>
                       </div>
-                      <span class="m-badge planned" style="margin-left:auto">Planned</span>
-                    </div>
-                    <div class="m-row">
-                      <div class="m-cover cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                      <div style="min-width:0">
-                        <div class="m-title">Elden Ring</div>
-                        <div class="m-meta">PS5 · Action RPG · 2022</div>
+                      <div>
+                        <div class="m-art cv3"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span></div>
+                        <div class="m-info"><div class="m-title">Tomb Raider: Angel of Darkness</div></div>
                       </div>
-                      <span class="m-badge playing" style="margin-left:auto">Playing</span>
-                    </div>
-                    <div class="m-row">
-                      <div class="m-cover cv3"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                      <div style="min-width:0">
-                        <div class="m-title">Stardew Valley</div>
-                        <div class="m-meta">iOS · Simulation · 2016</div>
+                      <div>
+                        <div class="m-art cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span></div>
+                        <div class="m-info"><div class="m-title">Borderlands 2</div></div>
                       </div>
-                      <span class="m-badge done" style="margin-left:auto">Done</span>
+                      <div>
+                        <div class="m-art cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span></div>
+                        <div class="m-info"><div class="m-title">Marvel's Spider-Man</div></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="m-tabs">
-                    <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
-                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Library</span>
-                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Lists</span>
-                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
-                    <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
+                  <div class="m-dock">
+                    <span class="m-fab"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    <div class="m-tabs">
+                      <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-books"/></svg>Library</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg>Insights</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@
   </header>
 
   <!-- ══ HOW IT WORKS ══ -->
-  <section id="how" class="section" style="background:var(--surface);border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)">
+  <section id="how" class="section band-soft">
     <div class="max-w-6xl mx-auto px-6">
       <div class="max-w-2xl mb-14">
         <p class="eyebrow flex items-center gap-2 mb-4 reveal">
@@ -304,14 +304,14 @@
   </section>
 
   <!-- ══ SCREENS ══ -->
-  <section id="screens" class="section" style="background:var(--surf-muted);border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke)">
+  <section id="screens" class="section band-soft alt">
     <div class="max-w-6xl mx-auto px-6">
       <div class="max-w-2xl mb-14">
         <p class="eyebrow flex items-center gap-2 mb-4 reveal">
           <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-smartphone"/></svg> A look inside
         </p>
         <h2 class="headline mb-5 reveal d1">Familiar where it counts, quiet everywhere else.</h2>
-        <p class="body-lg reveal d2">Native SwiftUI, system typography, light and dark — the app follows your phone, not a brand guideline.</p>
+        <p class="body-lg reveal d2">Native SwiftUI, light and dark, and a slow wash of colour drawn from whichever cover is on screen. Your covers set the mood; the app stays out of the way.</p>
       </div>
 
       <div class="grid sm:grid-cols-3 gap-10 sm:gap-6 justify-items-center">
@@ -322,51 +322,54 @@
             <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
             <div class="dev-screen">
               <div class="scr">
-                <div class="m-status">
-                  <span>9:41</span>
-                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
-                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
-                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
-                  </span>
-                </div>
-                <div class="m-body">
-                  <div class="m-head">
+                  <div class="m-amb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                  <div class="m-status">
+                    <span>9:41</span>
+                    <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                      <svg class="ico" aria-hidden="true"><use href="#i-signal"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                    </span>
+                  </div>
+                  <div class="m-body">
+                    <div style="display:flex;margin:calc(var(--u)*6) 0 calc(var(--u)*10)">
+                      <span class="m-toolbar">
+                        <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+                        <svg class="ico" aria-hidden="true"><use href="#i-filter"/></svg>
+                        <svg class="ico" aria-hidden="true"><use href="#i-sort"/></svg>
+                      </span>
+                    </div>
                     <div class="m-h1">Library</div>
-                    <svg class="ico" style="width:calc(var(--u)*17);height:calc(var(--u)*17);color:var(--m-accent)" aria-hidden="true"><use href="#i-filter"/></svg>
+                    <div class="m-seg" style="margin-top:calc(var(--u)*10)">
+                      <span class="on"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg>Games</span>
+                      <span><svg class="ico" aria-hidden="true"><use href="#i-archive"/></svg>Lists</span>
+                    </div>
+                    <div class="m-chips">
+                      <span class="m-chip on"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>All</span>
+                      <span class="m-chip"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span>
+                      <span class="m-chip playing"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-play"/></svg>Playing</span>
+                      <span class="m-chip completed"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Completed</span>
+                    </div>
+                    <div class="m-carousel">
+                      <span class="m-peek cv3"></span>
+                      <div class="m-slide">
+                        <div class="m-art cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-bookmark"/></svg>Planned</span></div>
+                        <div class="m-slide-title">Hollow Knight</div>
+                      </div>
+                      <span class="m-peek cv4"></span>
+                    </div>
+                    <div class="m-dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div>
                   </div>
-                  <div class="m-chips">
-                    <span class="m-chip on">All</span>
-                    <span class="m-chip">Planned</span>
-                    <span class="m-chip">Playing</span>
-                    <span class="m-chip">Done</span>
-                  </div>
-                  <div class="m-grid">
-                    <div class="m-tile">
-                      <div class="m-art cv4"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Playing</span></div>
-                      <div class="m-info"><div class="m-title">Hades II</div><div class="m-stars">★★★★★</div></div>
-                    </div>
-                    <div class="m-tile">
-                      <div class="m-art cv6"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Done</span></div>
-                      <div class="m-info"><div class="m-title">Baldur's Gate 3</div><div class="m-stars">★★★★★</div></div>
-                    </div>
-                    <div class="m-tile">
-                      <div class="m-art cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Planned</span></div>
-                      <div class="m-info"><div class="m-title">Metroid Prime 4</div><div class="m-stars" style="color:var(--m-txt2)">Not rated</div></div>
-                    </div>
-                    <div class="m-tile">
-                      <div class="m-art cv3"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg><span class="m-badge">Paused</span></div>
-                      <div class="m-info"><div class="m-title">Cyberpunk 2077</div><div class="m-stars">★★★★<span style="color:var(--m-txt2)">★</span></div></div>
+                  <div class="m-dock">
+                    <span class="m-fab"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    <div class="m-tabs">
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                      <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-books"/></svg>Library</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg>Insights</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
                     </div>
                   </div>
                 </div>
-                <div class="m-tabs">
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
-                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Library</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Lists</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
-                </div>
-              </div>
             </div>
             <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
           </div>
@@ -379,51 +382,119 @@
             <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
             <div class="dev-screen">
               <div class="scr">
-                <div class="m-status">
-                  <span>9:41</span>
-                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
-                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
-                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
-                  </span>
-                </div>
-                <div class="m-body">
-                  <div class="m-head">
-                    <div>
-                      <div class="m-h1">Insights</div>
-                      <div class="m-sub">At a glance</div>
+                  <div class="m-amb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                  <div class="m-status">
+                    <span>9:41</span>
+                    <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                      <svg class="ico" aria-hidden="true"><use href="#i-signal"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                    </span>
+                  </div>
+                  <div class="m-body">
+                    <div style="margin:calc(var(--u)*8) 0 calc(var(--u)*13)">
+                      <div class="m-h1 xl">Insights</div>
+                      <div class="m-sub">Your library, your story</div>
+                    </div>
+                    <div class="m-card">
+                      <div class="m-hero">
+                        <span class="m-hero-glyph"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></span>
+                        <div><div class="m-hero-num">44</div><div class="m-hero-cap">Games</div></div>
+                      </div>
+                      <div class="m-hr"></div>
+                      <div class="m-metrics">
+                        <div class="m-metric"><b style="color:var(--m-playing)">2</b><span>Playing</span></div>
+                        <div class="m-vr"></div>
+                        <div class="m-metric"><b style="color:var(--m-completed)">15</b><span>Completed</span></div>
+                        <div class="m-vr"></div>
+                        <div class="m-metric"><b style="color:var(--m-dropped)">4,9</b><span>Avg rating</span></div>
+                      </div>
+                    </div>
+                    <div class="m-card">
+                      <div class="m-ach-head">
+                        <span class="m-ach-glyph"><svg class="ico" aria-hidden="true"><use href="#i-trophy"/></svg></span>
+                        <div style="flex:1;min-width:0">
+                          <div class="m-title" style="font-size:calc(var(--u)*13)">Achievements</div>
+                          <div class="m-meta">24 of 42</div>
+                        </div>
+                        <svg class="ico m-tick" style="color:var(--m-txt2)" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+                      </div>
+                      <div class="m-bar" style="margin-top:calc(var(--u)*10)"><i style="width:57%"></i></div>
+                      <div class="m-hr"></div>
+                      <div class="m-label">Latest</div>
+                      <div class="m-row bare">
+                        <span class="m-medal"><svg class="ico" aria-hidden="true"><use href="#i-archive"/></svg></span>
+                        <div style="flex:1;min-width:0">
+                          <div class="m-title">Stacking Up</div>
+                          <div class="m-meta">Save 25 games</div>
+                          <div class="m-meta accent">Unlocked Aug 15, 2026</div>
+                        </div>
+                        <svg class="ico m-tick" aria-hidden="true"><use href="#i-check-circle"/></svg>
+                      </div>
+                      <div class="m-hr"></div>
+                      <div class="m-label">Next goal</div>
+                      <div class="m-goal">
+                        <span class="m-medal locked"><svg class="ico" aria-hidden="true"><use href="#i-archive"/></svg></span>
+                        <div style="flex:1;min-width:0">
+                          <div class="m-title">Serious Collection</div>
+                          <div class="m-meta">Save 50 games</div>
+                          <div class="m-bar" style="margin-top:calc(var(--u)*7)"><i style="width:88%"></i></div>
+                          <div class="m-meta">44 of 50</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="m-card">
+                      <div class="m-card-title">Library balance</div>
+                      <div class="m-seg">
+                        <span class="on"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg>Ring</span>
+                        <span><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Bars</span>
+                      </div>
+                      <div class="m-ringrow">
+                        <div class="m-ring"><div class="m-ring-in"></div></div>
+                        <div class="m-legend">
+                          <div class="m-leg"><i style="background:var(--m-planned)"></i>Planned<b>24</b><em>55%</em></div>
+                          <div class="m-leg"><i style="background:var(--m-playing)"></i>Playing<b>2</b><em>5%</em></div>
+                          <div class="m-leg"><i style="background:var(--m-completed)"></i>Completed<b>15</b><em>34%</em></div>
+                          <div class="m-leg"><i style="background:var(--m-paused)"></i>Paused<b>3</b><em>7%</em></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="m-card">
+                      <div class="m-card-title">Top genres</div>
+                      <div class="m-rank">
+                      <span class="m-rank-glyph" style="background:color-mix(in srgb, var(--m-planned) 14%, transparent);color:var(--m-planned)"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-gamepad"/></svg></span>
+                      <div class="m-rank-body">
+                        <div class="m-rank-label"><span>Adventure</span><span style="color:var(--m-planned)">80%</span></div>
+                        <div class="m-bar "><i style="width:80%"></i></div>
+                      </div>
+                    </div>
+                      <div class="m-rank">
+                      <span class="m-rank-glyph" style="background:color-mix(in srgb, var(--m-playing) 14%, transparent);color:var(--m-playing)"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-mountain"/></svg></span>
+                      <div class="m-rank-body">
+                        <div class="m-rank-label"><span>Shooter</span><span style="color:var(--m-playing)">41%</span></div>
+                        <div class="m-bar cyan"><i style="width:41%"></i></div>
+                      </div>
+                    </div>
+                      <div class="m-rank">
+                      <span class="m-rank-glyph" style="background:color-mix(in srgb, var(--m-dropped) 14%, transparent);color:var(--m-dropped)"><svg class="ico ico-fill" aria-hidden="true"><use href="#i-puzzle"/></svg></span>
+                      <div class="m-rank-body">
+                        <div class="m-rank-label"><span>Puzzle</span><span style="color:var(--m-dropped)">30%</span></div>
+                        <div class="m-bar pink"><i style="width:30%"></i></div>
+                      </div>
+                    </div>
+                      <div class="m-meta accent" style="display:flex;align-items:center;gap:calc(var(--u)*5)"><svg class="ico" style="width:calc(var(--u)*10);height:calc(var(--u)*10)" aria-hidden="true"><use href="#i-arrow-down"/></svg>Show all 16</div>
                     </div>
                   </div>
-                  <div class="m-ringwrap">
-                    <div class="m-ring"><div class="m-ring-in"><b>42</b><span>games</span></div></div>
-                  </div>
-                  <div class="m-legend">
-                    <span class="m-leg"><i style="background:var(--m-accent)"></i>Planned <b>43%</b></span>
-                    <span class="m-leg"><i style="background:#D946EF"></i>Playing <b>19%</b></span>
-                    <span class="m-leg"><i style="background:#22D3EE"></i>Done <b>16%</b></span>
-                    <span class="m-leg"><i style="background:#E9A13B"></i>Paused <b>12%</b></span>
-                  </div>
-                  <div class="m-sec" style="margin-bottom:calc(var(--u)*10)">Top genres</div>
-                  <div class="m-barrow">
-                    <div class="m-barlabel"><span>Role-playing</span><span>38%</span></div>
-                    <div class="m-bar"><i style="width:38%"></i></div>
-                  </div>
-                  <div class="m-barrow">
-                    <div class="m-barlabel"><span>Action</span><span>26%</span></div>
-                    <div class="m-bar"><i style="width:26%"></i></div>
-                  </div>
-                  <div class="m-barrow">
-                    <div class="m-barlabel"><span>Indie</span><span>19%</span></div>
-                    <div class="m-bar"><i style="width:19%"></i></div>
+                  <div class="m-dock">
+                    <span class="m-fab"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    <div class="m-tabs">
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-books"/></svg>Library</span>
+                      <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-pie"/></svg>Insights</span>
+                      <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
+                    </div>
                   </div>
                 </div>
-                <div class="m-tabs">
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Library</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Lists</span>
-                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
-                </div>
-              </div>
             </div>
             <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
           </div>
@@ -436,64 +507,70 @@
             <svg class="dev-back" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="257.32" y="105.31" width="2" height="46.44" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="105.69" width="1.23" height="45.67" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="84.24" width="2" height="19.35" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="84.63" width="1.23" height="18.58" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="139.53" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="139.92" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="-1.32" y="189.55" width="2" height="33.54" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="-0.93" y="189.94" width="1.23" height="32.77" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="257.32" y="315.92" width="2" height="21.93" rx="1" fill="url(#kblBtn)" stroke="rgba(0,0,0,.45)" stroke-width="0.46"/><rect x="257.71" y="316.31" width="1.23" height="21.16" rx="1" fill="none" stroke="#f4f6f8" stroke-opacity=".4" stroke-width="0.43"/><rect x="0" y="0" width="258" height="526.53" rx="29.22" fill="url(#kblBand)"/><rect x="0" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="44.76" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="45.76" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="0" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="251.94" y="481.78" width="6.06" height="1" fill="rgba(0,0,0,.34)"/><rect x="251.94" y="482.78" width="6.06" height="0.7" fill="rgba(255,255,255,.14)"/><rect x="0.72" y="0.72" width="256.56" height="525.09" rx="28.76" fill="none" stroke="url(#kblEdge)" stroke-width="1.44"/><rect x="2.12" y="2.12" width="253.77" height="522.3" rx="27.73" fill="none" stroke="rgba(0,0,0,.72)" stroke-width="1.29"/><rect x="7.37" y="7.37" width="243.26" height="511.79" rx="23.17" fill="#04050a"/></svg>
             <div class="dev-screen">
               <div class="scr">
-                <div class="m-status">
-                  <span>9:41</span>
-                  <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
-                    <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
-                    <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
-                  </span>
+                  <div class="m-amb" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                  <div class="m-status">
+                    <span>9:41</span>
+                    <span style="display:flex;align-items:center;gap:calc(var(--u)*4)">
+                      <svg class="ico" aria-hidden="true"><use href="#i-signal"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-wifi"/></svg>
+                      <svg class="ico" aria-hidden="true"><use href="#i-battery"/></svg>
+                    </span>
+                  </div>
+                  <div class="m-navtitle" style="opacity:.5">Library</div>
+                  <div class="m-scrim"></div>
+                  <div class="m-sheet">
+                    <div class="m-grabber"></div>
+                    <div class="m-body" style="padding-top:calc(var(--u)*6)">
+                      <div style="margin-bottom:calc(var(--u)*12)">
+                        <div class="m-h1">Find a Game</div>
+                        <div class="m-meta">Search the catalog by title</div>
+                      </div>
+                      <div class="m-field">
+                        <svg class="ico" aria-hidden="true"><use href="#i-sparkle-search"/></svg> hollow knight
+                      </div>
+                      <div class="m-row">
+                      <div class="m-cover cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow Knight</div>
+                        <div class="m-meta">Switch, PS4, PC · 2017</div>
+                      </div>
+                      <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    </div>
+                      <div class="m-row">
+                      <div class="m-cover cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow Knight: Silksong</div>
+                        <div class="m-meta">Switch, PC · 2025</div>
+                      </div>
+                      <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    </div>
+                      <div class="m-row">
+                      <div class="m-cover cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow Knight: Voidheart</div>
+                        <div class="m-meta">In your library</div>
+                      </div>
+                      <span class="m-plus ghost"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
+                    </div>
+                    <div class="m-row">
+                      <div class="m-cover cv4"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow</div>
+                        <div class="m-meta">PC, Xbox One · 2017</div>
+                      </div>
+                      <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    </div>
+                    <div class="m-row">
+                      <div class="m-cover cv6"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
+                      <div style="min-width:0">
+                        <div class="m-title">Hollow Knight: Gods &amp; Nightmares</div>
+                        <div class="m-meta">PC · 2016</div>
+                      </div>
+                      <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
+                    </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="m-body">
-                  <div class="m-head">
-                    <div>
-                      <div class="m-h1">Find a Game</div>
-                      <div class="m-sub">Search the catalog by title</div>
-                    </div>
-                  </div>
-                  <div class="m-field">
-                    <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg> hollow knight
-                  </div>
-                  <div class="m-row">
-                    <div class="m-cover cv1"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                    <div style="min-width:0">
-                      <div class="m-title">Hollow Knight</div>
-                      <div class="m-meta">Switch, PS4, PC · 2017</div>
-                    </div>
-                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
-                  </div>
-                  <div class="m-row">
-                    <div class="m-cover cv5"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                    <div style="min-width:0">
-                      <div class="m-title">Hollow Knight: Silksong</div>
-                      <div class="m-meta">Switch, PC · 2025</div>
-                    </div>
-                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
-                  </div>
-                  <div class="m-row">
-                    <div class="m-cover cv2"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                    <div style="min-width:0">
-                      <div class="m-title">Hollow Knight: Voidheart</div>
-                      <div class="m-meta">In your library</div>
-                    </div>
-                    <span class="m-plus ghost"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span>
-                  </div>
-                  <div class="m-row">
-                    <div class="m-cover cv4"><svg class="ico" aria-hidden="true"><use href="#i-gamepad"/></svg></div>
-                    <div style="min-width:0">
-                      <div class="m-title">Hollow</div>
-                      <div class="m-meta">PC, Xbox One · 2017</div>
-                    </div>
-                    <span class="m-plus"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></span>
-                  </div>
-                </div>
-                <div class="m-tabs">
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Home</span>
-                  <span class="m-tab on"><svg class="ico" aria-hidden="true"><use href="#i-grid"/></svg>Library</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Lists</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg>Insights</span>
-                  <span class="m-tab"><svg class="ico" aria-hidden="true"><use href="#i-settings"/></svg>Settings</span>
-                </div>
-              </div>
             </div>
             <svg class="dev-front" viewBox="0 0 258 526.53" preserveAspectRatio="none" aria-hidden="true"><rect x="12.52" y="12.52" width="232.96" height="501.49" rx="20.55" fill="none" stroke="url(#kblBezel)" stroke-width="0.93"/><rect x="13.71" y="13.71" width="230.59" height="499.12" rx="19.82" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="0.77"/><rect x="96.1" y="19.36" width="65.79" height="17.54" rx="8.77" fill="url(#kblIsland)" stroke="rgba(255,255,255,.055)" stroke-width="0.5"/><circle cx="147.42" cy="28.13" r="3.51" fill="url(#kblLens)" stroke="rgba(255,255,255,.09)" stroke-width="0.35"/><circle cx="147.42" cy="28.13" r="1.96" fill="#0a1624"/><circle cx="146.65" cy="27.21" r="0.77" fill="rgba(103,166,214,.5)"/><circle cx="148.4" cy="28.97" r="0.35" fill="rgba(255,255,255,.2)"/><circle cx="111.89" cy="28.13" r="1.4" fill="rgba(10,14,20,.9)" stroke="rgba(255,255,255,.03)" stroke-width="0.28"/></svg>
           </div>
@@ -585,7 +662,7 @@
         <span class="w-7 h-7 rounded-[9px] grid place-items-center text-white" style="background:linear-gradient(140deg,#4F46E5,#D946EF)">
           <svg class="ico" style="width:15px;height:15px" aria-hidden="true"><use href="#i-gamepad"/></svg>
         </span>
-        <span class="text-sm font-bold tracking-tight" style="font-family:'Space Grotesk',sans-serif">Games Bucket List</span>
+        <span class="text-sm font-bold tracking-tight" style="font-family:Nunito,sans-serif">Games Bucket List</span>
       </div>
       <div class="flex flex-wrap gap-x-6 gap-y-3 justify-center">
         <a href="support.html">Support</a>

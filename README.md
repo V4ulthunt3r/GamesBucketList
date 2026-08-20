@@ -28,6 +28,28 @@ screen, so a mock-up scales automatically with whatever phone width it is placed
 The iPhone frame geometry is the same SVG used on the Kids Bucket List page (Apple's
 1470×3000 body ratio, 75/1470 bezel inset).
 
+The screens themselves follow the shipping app: an ambient mesh behind everything, opaque
+cards floating on it with no visible frame, a glass capsule tab bar (Home / Library /
+Insights / Settings) and the quick-add button riding above it. The German mock-ups use the
+app's own translations from `Localizable.xcstrings`, so keep them in step when a string
+changes there.
+
+## Following the app
+
+The page is meant to read as the same product as the app, so when the app's design system
+moves, these move with it:
+
+- **Ambient mesh** — `.ambient` is `AmbientBackground` flattened into CSS: slowly drifting
+  colour behind an opaque base, at the app's own opacities (`.24` light, `.42` dark). Bands
+  and cards stay translucent so it carries through the whole page instead of stopping at
+  the hero.
+- **Type** — Nunito stands in for SF Rounded, which the app uses for titles and numerals.
+- **Status tints** — the `--st-*` and `--m-*` tokens mirror `LibraryStatus.tintColor`
+  (planned indigo, playing cyan, completed green, paused orange, dropped magenta).
+
+`assets/landing.css` is linked with a `?v=N` query. Bump it whenever the stylesheet changes,
+otherwise returning visitors keep the cached version.
+
 ## Before going live
 
 - [ ] **App Store link** — the primary CTA currently points at the `#notify` section.
