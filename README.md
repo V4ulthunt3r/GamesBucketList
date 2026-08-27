@@ -1,7 +1,8 @@
 # Games Bucket List — Landing Page
 
-Static site for the iOS app *Games Bucket List*. No build step and no runtime dependencies:
-plain HTML plus two stylesheets that ship with the repo. Open `index.html` in a browser,
+Static site for the iOS app *Games Bucket List*. No build step and no third-party requests:
+plain HTML plus three stylesheets and four font files, all served from the repo. Opening any
+page hits nothing but this origin. Open `index.html` in a browser,
 or serve the folder (`python3 -m http.server 4321`) and go to <http://localhost:4321>.
 
 ## Pages
@@ -15,6 +16,8 @@ or serve the folder (`python3 -m http.server 4321`) and go to <http://localhost:
 | `impressum.html` / `impressum-de.html` | EN / DE | Legal notice (§ 5 DDG) |
 | `assets/landing.css` | — | All shared styling, including the app screen mock-ups |
 | `assets/tailwind.css` | — | Generated Tailwind utilities — do not edit by hand |
+| `assets/fonts.css` | — | `@font-face` rules for the self-hosted fonts |
+| `assets/fonts/` | — | Inter and Nunito as woff2 (SIL OFL 1.1) |
 
 Each page carries its own inline SVG icon sprite and remembers the light/dark choice in
 `localStorage`. The two landing pages ship `class="no-js"` on `<html>`, which the head
@@ -92,6 +95,21 @@ lives in the repo — the command is a one-off, not a build step.
       somewhere else, update section 9 in `privacy.html` / `privacy-de.html`.
 - [ ] **Dates** — the privacy policy shows "14 August 2026"; bump it when the content changes.
 - [ ] Optional: add `app-icon.png` plus favicon/OG image tags, as on the Kids Bucket List page.
+
+## Fonts
+
+Inter and Nunito used to come from `fonts.googleapis.com`, which handed every visitor's IP
+address to Google and put the rendering on someone else's server. They are served from
+`assets/fonts/` now.
+
+Google ships these as **variable fonts**: one file per family and subset covers the whole
+weight range. That is why `assets/fonts.css` has sixteen `@font-face` blocks but only four
+files behind them — the per-weight declarations all point at the same file. It is the exact
+structure Google serves, kept deliberately so the rendering does not change.
+
+Only the `latin` and `latin-ext` subsets are included; the site is English and German only,
+so Cyrillic, Greek and Vietnamese would be dead weight. Adding a weight means copying the
+`@font-face` block from Google and pointing `src` at the family's existing local file.
 
 ## Colours
 
