@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,11 @@
   <meta property="og:locale" content="en">
   <meta property="og:title" content="Games Bucket List – Every game you'll play someday, in one place.">
   <meta property="og:description" content="Save the games you want to experience someday — before they disappear from memory. For iPhone and iPad.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class'}</script>
   <script>
     (function () {
+      /* Sofort, noch vor dem ersten Paint: ohne das bleiben die .reveal-Blöcke
+         unsichtbar, falls dieses Script nie läuft. */
+      document.documentElement.classList.remove('no-js');
       const saved = localStorage.getItem('theme');
       if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -26,7 +27,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/landing.css?v=9">
+  <link rel="stylesheet" href="assets/landing.css?v=11">
+  <link rel="stylesheet" href="assets/tailwind.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col">
 <!-- The app's ambient mesh: slow coloured light behind an opaque base. -->
@@ -37,9 +39,11 @@
 <svg class="gbl-defs" aria-hidden="true"><defs><linearGradient id="kblBand" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".14" stop-color="#c2c7cd"/><stop offset=".34" stop-color="#8e959d"/><stop offset=".56" stop-color="#40454c"/><stop offset=".78" stop-color="#8e959d"/><stop offset=".92" stop-color="#c2c7cd"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblBtn" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".4" stop-color="#8e959d"/><stop offset=".75" stop-color="#40454c"/><stop offset="1" stop-color="#8e959d"/></linearGradient><linearGradient id="kblEdge" x1="0" y1="0" x2="258" y2="526.53" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgba(255,255,255,.65)"/><stop offset=".18" stop-color="rgba(255,255,255,.16)"/><stop offset=".55" stop-color="rgba(255,255,255,.04)"/><stop offset=".86" stop-color="rgba(255,255,255,.22)"/><stop offset="1" stop-color="rgba(255,255,255,.36)"/></linearGradient><linearGradient id="kblBezel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b1d22"/><stop offset=".32" stop-color="#020305"/><stop offset=".76" stop-color="#090a0d"/><stop offset="1" stop-color="#2b2d32"/></linearGradient><linearGradient id="kblIsland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0e11"/><stop offset=".35" stop-color="#010102"/><stop offset="1" stop-color="#07080a"/></linearGradient><radialGradient id="kblLens" cx=".38" cy=".34" r=".85"><stop offset="0" stop-color="#12233a"/><stop offset=".45" stop-color="#081019"/><stop offset="1" stop-color="#03060a"/></radialGradient></defs></svg>
 
 <!-- ══ NAV ══ -->
+<!-- Sentinel: solange er sichtbar ist, liegt kein Inhalt unter der Leiste. -->
+<div id="nav-top" aria-hidden="true"></div>
 <nav class="nav-blur sticky top-0 z-50">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2.5">
+    <a href="index.html" class="nav-brand flex items-center gap-2.5">
       <span class="w-8 h-8 rounded-[10px] grid place-items-center text-white" style="background:linear-gradient(140deg,#4F46E5,#D946EF)">
         <svg class="ico" style="width:17px;height:17px" aria-hidden="true"><use href="#i-gamepad"/></svg>
       </span>
@@ -53,8 +57,8 @@
         <svg class="ico" id="theme-icon" aria-hidden="true"><use href="#i-moon"/></svg>
       </button>
       <a href="index-de.html" class="nav-link" hreflang="de">DE</a>
-      <a href="#notify" class="btn-nav">
-        <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span class="hidden sm:inline">Get notified</span><span class="sm:hidden">Notify</span>
+      <a href="https://testflight.apple.com/join/gEE57wMc" target="_blank" rel="noopener" class="btn-nav">
+        <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg><span class="hidden sm:inline">Join the beta</span><span class="sm:hidden">Beta</span>
       </a>
     </div>
   </div>
@@ -64,33 +68,31 @@
 
   <!-- ══ HERO ══ -->
   <header class="relative overflow-hidden">
-    <div class="glow" style="top:-260px;right:-140px"></div>
-    <div class="glow glow-2" style="top:120px;left:-300px"></div>
 
     <div class="max-w-6xl mx-auto px-6 pt-14 pb-16 sm:pt-20 sm:pb-24 grid lg:grid-cols-[1.05fr_.95fr] gap-14 items-center relative">
       <div>
-        <p class="eyebrow flex items-center gap-2 mb-5 reveal">
+        <p class="eyebrow flex items-center gap-2 mb-5">
           <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-sparkle"/></svg>
-          iPhone &amp; iPad · Coming soon
+          iPhone &amp; iPad · TestFlight beta
         </p>
-        <h1 class="display mb-6 reveal d1">
+        <h1 class="display mb-6">
           The games you'll<br>play <span class="grad-text">someday.</span>
         </h1>
-        <p class="body-lg max-w-xl mb-9 reveal d2">
+        <p class="body-lg max-w-xl mb-9">
           You see a trailer, a friend recommends something, a sale flashes past — and three weeks later it's gone.
           Games Bucket List keeps every one of them in a single library: found, sorted and remembered
           <em class="not-italic font-semibold" style="color:var(--text-pri)">before it disappears from memory.</em>
         </p>
-        <div class="flex flex-wrap gap-3 mb-8 reveal d3">
-          <!-- TODO: swap href for the App Store URL once the app is live -->
-          <a href="#notify" class="btn-primary">
-            <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> Coming to the App Store
+        <div class="flex flex-wrap gap-3 mb-8">
+          <!-- TODO: swap href for the App Store URL once the app leaves beta -->
+          <a href="https://testflight.apple.com/join/gEE57wMc" target="_blank" rel="noopener" class="btn-primary">
+            <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> Join the TestFlight beta
           </a>
           <a href="#how" class="btn-outline">
             <svg class="ico" aria-hidden="true"><use href="#i-arrow-down"/></svg> See how it works
           </a>
         </div>
-        <div class="flex flex-wrap gap-2.5 reveal d4">
+        <div class="flex flex-wrap gap-2.5">
           <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-smartphone"/></svg> iPhone</span>
           <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-tablet"/></svg> iPad</span>
           <span class="pbadge"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg> iCloud sync</span>
@@ -99,7 +101,7 @@
       </div>
 
       <!-- Hero phone -->
-      <div class="hero-stage flex justify-center lg:justify-end reveal d2">
+      <div class="hero-stage flex justify-center lg:justify-end">
         <div class="hero-float">
           <div class="hero-phone-3d">
             <div class="device-phone" style="width:min(262px,66vw);--screen-r:20px">
@@ -633,21 +635,23 @@
       <p class="eyebrow flex items-center justify-center gap-2 mb-4 reveal">
         <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-clock"/></svg> Almost there
       </p>
-      <h2 class="headline mb-5 reveal d1">Games Bucket List is coming to the App Store.</h2>
+      <h2 class="headline mb-5 reveal d1">In beta now, App Store next.</h2>
       <p class="body-lg mb-9 reveal d2">
-        Version 1.0 is in the final stretch for iPhone and iPad. Want a short email when it's out?
-        Write me one line — no list, no newsletter, just a reply on launch day.
+        Version 1.0 is in the final stretch for iPhone and iPad. You can play with it today
+        through TestFlight — or write me one line and get a short email on launch day.
+        No list, no newsletter, just a reply.
       </p>
       <div class="flex flex-wrap gap-3 justify-center reveal d3">
-        <a href="mailto:peter@hildel.com?subject=Games%20Bucket%20List%20—%20notify%20me%20at%20launch" class="btn-primary">
-          <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Email me at launch
+        <a href="https://testflight.apple.com/join/gEE57wMc" target="_blank" rel="noopener" class="btn-primary">
+          <svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> Join the TestFlight beta
         </a>
-        <a href="support.html" class="btn-outline">
-          <svg class="ico" aria-hidden="true"><use href="#i-note"/></svg> Questions &amp; support
+        <a href="mailto:peter@hildel.com?subject=Games%20Bucket%20List%20—%20notify%20me%20at%20launch" class="btn-outline">
+          <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg> Email me at launch
         </a>
       </div>
       <p class="text-xs mt-7 reveal d4" style="color:var(--text-ter)">
-        Requires a recent iPhone or iPad. iCloud sync is optional.
+        Requires a recent iPhone or iPad and the TestFlight app. iCloud sync is optional.
+        Questions? <a href="support.html" style="color:var(--accent);font-weight:600">Support</a>.
       </p>
     </div>
   </section>
@@ -699,6 +703,16 @@
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  /* Scroll-Edge: der weiche Auslauf unter der Leiste erscheint erst, wenn
+     wirklich Inhalt darunter durchläuft — statt einer dauerhaften 1px-Linie. */
+  const navBar = document.querySelector('.nav-blur');
+  const navTop = document.getElementById('nav-top');
+  if (navBar && navTop) {
+    new IntersectionObserver(
+      ([e]) => navBar.classList.toggle('scrolled', !e.isIntersecting)
+    ).observe(navTop);
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>

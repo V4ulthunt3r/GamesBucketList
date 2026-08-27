@@ -62,14 +62,6 @@ body {
 :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:8px; }
 a { color:inherit; text-decoration:none; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration:.01ms !important; animation-iteration-count:1 !important;
-    transition-duration:.01ms !important; scroll-behavior:auto !important;
-  }
-  .reveal { opacity:1 !important; transform:none !important; }
-}
-
 /* ═══ AMBIENT MESH ═══
    The app's AmbientBackground: slow coloured light drifting behind an opaque
    base. Ambience only — never the contrast the text depends on, which is why
@@ -82,6 +74,8 @@ a { color:inherit; text-decoration:none; }
 .amb {
   position:absolute; border-radius:50%; filter:blur(90px);
   animation:amb-drift 22s ease-in-out infinite;
+  /* Ohne diesen Hinweis rastert der Compositor den 90px-Blur pro Frame neu. */
+  will-change:transform;
 }
 .amb-1 { width:58vw; height:58vw; top:-18vw; right:-10vw;  background:radial-gradient(circle,#4F46E5 0%,transparent 70%); }
 .amb-2 { width:52vw; height:52vw; top:6vw;   left:-14vw;   background:radial-gradient(circle,#D946EF 0%,transparent 70%); animation-delay:-7s; }
@@ -95,10 +89,13 @@ a { color:inherit; text-decoration:none; }
   .amb-3 { width:120vw; height:120vw; top:55vh;  right:-45vw; }
   .amb-4 { width:130vw; height:130vw; bottom:-30vw; left:-30vw; }
 }
+/* Reine Translation: ein skalierendes Element mit blur() muss in jedem Frame
+   neu gerastert werden, ein verschobenes kann der Compositor umsonst bewegen.
+   Die Amplitude ist etwas größer, damit die Drift ohne scale() gleich lebendig bleibt. */
 @keyframes amb-drift {
-  0%,100% { transform:translate3d(0,0,0) scale(1); }
-  33%     { transform:translate3d(4%,-3%,0) scale(1.09); }
-  66%     { transform:translate3d(-3%,4%,0) scale(.96); }
+  0%,100% { transform:translate3d(0,0,0); }
+  33%     { transform:translate3d(6%,-4%,0); }
+  66%     { transform:translate3d(-5%,5%,0); }
 }
 
 /* ── TYPOGRAPHY ──
@@ -154,28 +151,37 @@ a { color:inherit; text-decoration:none; }
 .ico-fill { fill:currentColor; stroke:none; }
 .chip .ico, .pbadge .ico, .btn-primary .ico, .btn-outline .ico,
 .btn-ghost .ico, .btn-solid .ico, .btn-nav .ico { width:1.15em; height:1.15em; }
-.ico-eyebrow { width:14px; height:14px; stroke-width:1.9; color:var(--accent); }
-.ico-feat  { width:25px; height:25px; stroke-width:1.6; }
-.ico-step  { width:26px; height:26px; stroke-width:1.55; }
-.ico-cta   { width:30px; height:30px; stroke-width:1.55; }
+.ico-eyebrow { width:.875rem; height:.875rem; stroke-width:1.9; color:var(--accent); }
+.ico-feat  { width:1.5625rem; height:1.5625rem; stroke-width:1.6; }
+.ico-step  { width:1.625rem; height:1.625rem; stroke-width:1.55; }
+.ico-cta   { width:1.875rem; height:1.875rem; stroke-width:1.55; }
 .icon-btn {
   display:inline-flex; align-items:center; justify-content:center;
-  width:34px; height:34px; border-radius:999px; color:var(--text-sec);
+  width:2.125rem; height:2.125rem; border-radius:999px; color:var(--text-sec);
   transition:background .2s ease, color .2s ease;
 }
-.icon-btn:hover { background:var(--surf-muted); color:var(--text-pri); }
-.icon-btn .ico { width:18px; height:18px; }
+.icon-btn .ico { width:1.125rem; height:1.125rem; }
 
 /* ── NAV ── */
+/* Messpunkt am Seitenanfang. `flex:none`, weil body ein Flex-Container ist und
+   das Element sonst auf 0 schrumpft; die negative Margin hebt den 1px wieder auf. */
+#nav-top { flex:none; height:1px; margin-bottom:-1px; }
 .nav-blur {
   background:rgba(244,244,249,.72);
   backdrop-filter:blur(24px) saturate(1.7);
   -webkit-backdrop-filter:blur(24px) saturate(1.7);
-  border-bottom:1px solid var(--stroke);
 }
+/* Scroll-Edge statt Trennlinie: der weiche Auslauf erscheint erst, wenn
+   tatsächlich Inhalt unter der Leiste durchläuft. */
+.nav-blur::after {
+  content:""; position:absolute; left:0; right:0; top:100%; height:18px;
+  pointer-events:none; opacity:0; transition:opacity 220ms ease;
+  background:linear-gradient(to bottom, rgba(16,16,32,.07), transparent);
+}
+.dark .nav-blur::after { background:linear-gradient(to bottom, rgba(0,0,0,.38), transparent); }
+.nav-blur.scrolled::after { opacity:1; }
 .dark .nav-blur { background:rgba(5,5,9,.66); }
 .nav-link { font-size:.85rem; font-weight:600; color:var(--text-sec); transition:color .2s ease; }
-.nav-link:hover { color:var(--text-pri); }
 
 /* ── BUTTONS ──
    The primary button is the app's quick-add button flattened into a pill:
@@ -183,46 +189,41 @@ a { color:inherit; text-decoration:none; }
 .btn-primary {
   position:relative;
   display:inline-flex; align-items:center; gap:9px;
-  padding:14px 26px; border-radius:999px;
+  padding:.875rem 1.625rem; border-radius:999px;
   background:linear-gradient(135deg,#4F46E5,#D946EF);
   color:#fff; font-size:.95rem; font-weight:700; letter-spacing:-.01em;
   border:1px solid rgba(255,255,255,.22);
   box-shadow:0 8px 26px var(--shadow-accent);
   transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
-.btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 34px var(--shadow-accent); filter:brightness(1.06); }
 .btn-outline {
   display:inline-flex; align-items:center; gap:9px;
-  padding:14px 24px; border-radius:999px;
+  padding:.875rem 1.5rem; border-radius:999px;
   background:var(--surface); border:1px solid var(--stroke); color:var(--text-pri);
   font-size:.92rem; font-weight:600;
   transition:transform .2s ease, border-color .2s ease;
 }
-.btn-outline:hover { transform:translateY(-2px); border-color:var(--accent); }
 .btn-nav {
   display:inline-flex; align-items:center; gap:6px;
-  padding:8px 15px; border-radius:999px;
+  padding:.5rem .9375rem; border-radius:999px;
   background:linear-gradient(135deg,var(--accent),var(--spark));
   color:#fff; font-size:.78rem; font-weight:700;
   transition:transform .2s ease, filter .2s ease;
 }
-.btn-nav:hover { transform:translateY(-1px); filter:brightness(1.08); }
 .btn-ghost {
   display:inline-flex; align-items:center; gap:8px;
-  padding:14px 24px; border-radius:999px;
+  padding:.875rem 1.5rem; border-radius:999px;
   background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3);
   color:#fff; font-size:.9rem; font-weight:600;
   transition:background .2s ease;
 }
-.btn-ghost:hover { background:rgba(255,255,255,.24); }
 .btn-solid {
   display:inline-flex; align-items:center; gap:9px;
-  padding:14px 26px; border-radius:999px;
+  padding:.875rem 1.625rem; border-radius:999px;
   background:#fff; color:#1A1730; font-size:.95rem; font-weight:700;
   box-shadow:0 10px 26px rgba(0,0,0,.28);
   transition:transform .2s ease;
 }
-.btn-solid:hover { transform:translateY(-2px); }
 
 /* ── SURFACES ──
    The app floats opaque cards on the ambient light rather than outlining
@@ -236,8 +237,6 @@ a { color:inherit; text-decoration:none; }
   transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .dark .card { box-shadow:0 8px 30px rgba(0,0,0,.4); }
-.card:hover { transform:translateY(-3px); box-shadow:0 2px 4px rgba(16,16,32,.05), 0 16px 36px rgba(16,16,32,.10); }
-.dark .card:hover { border-color:rgba(139,133,255,.28); box-shadow:0 14px 40px rgba(0,0,0,.5); }
 .card-muted {
   background:color-mix(in srgb, var(--surf-muted) 88%, transparent);
   backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
@@ -246,7 +245,7 @@ a { color:inherit; text-decoration:none; }
 /* Feature glyphs echo the app's badges: a tinted circle, a little light under
    it, and the tint carried by the symbol itself. */
 .feat-icon {
-  width:54px; height:54px; border-radius:50%; flex-shrink:0;
+  width:3.375rem; height:3.375rem; border-radius:50%; flex-shrink:0;
   display:flex; align-items:center; justify-content:center;
   background:color-mix(in srgb, var(--accent) 13%, transparent); color:var(--accent);
   border:1px solid color-mix(in srgb, var(--accent) 24%, transparent);
@@ -263,7 +262,7 @@ a { color:inherit; text-decoration:none; }
   box-shadow:0 6px 18px color-mix(in srgb, var(--disco) 22%, transparent);
 }
 .step-num {
-  width:30px; height:30px; border-radius:50%; flex:none;
+  width:1.875rem; height:1.875rem; border-radius:50%; flex:none;
   display:grid; place-items:center;
   background:linear-gradient(135deg,var(--accent),var(--spark)); color:#fff;
   font-size:.8rem; font-weight:800;
@@ -273,28 +272,27 @@ a { color:inherit; text-decoration:none; }
 /* ── SMALL BITS ── */
 .chip {
   display:inline-flex; align-items:center; gap:5px;
-  padding:5px 11px; border-radius:999px;
+  padding:.3125rem .6875rem; border-radius:999px;
   font-size:.66rem; font-weight:700; white-space:nowrap;
   background:var(--surf-muted); color:var(--text-sec);
 }
 /* Outlined capsule, the way an unselected status chip looks in the app. */
 .pbadge {
   display:inline-flex; align-items:center; gap:7px;
-  padding:9px 16px; border-radius:999px;
+  padding:.5625rem 1rem; border-radius:999px;
   border:1px solid color-mix(in srgb, var(--accent) 34%, transparent);
   background:transparent;
   font-size:.8rem; font-weight:600; color:var(--accent);
   transition:transform .2s ease, background .2s ease;
 }
-.pbadge:hover { transform:translateY(-1px); background:color-mix(in srgb, var(--accent) 10%, transparent); }
-.stat-tile { background:var(--surface); border:1px solid var(--stroke); border-radius:16px; padding:16px; text-align:center; }
+.stat-tile { background:var(--surface); border:1px solid var(--stroke); border-radius:16px; padding:1rem; text-align:center; }
 
 /* ── DARK BAND (privacy / closing CTA) ── */
 .band { background:#140F33; color:#fff; }
 .dark .band { background:rgba(10,9,23,.62); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
 .band .band-sub { color:rgba(255,255,255,.72); }
 .cta-glyph {
-  width:66px; height:66px; margin:0 auto 22px; border-radius:50%;
+  width:4.125rem; height:4.125rem; margin:0 auto 1.375rem; border-radius:50%;
   display:flex; align-items:center; justify-content:center; color:#fff;
   background:linear-gradient(135deg,rgba(79,70,229,.55),rgba(217,70,239,.55));
   border:1px solid rgba(255,255,255,.26);
@@ -311,7 +309,6 @@ a { color:inherit; text-decoration:none; }
   transform-style:preserve-3d;
   transition:transform .6s cubic-bezier(.22,1,.36,1);
 }
-.hero-phone-3d:hover { transform:rotateY(-7deg) rotateX(2deg) rotateZ(.5deg); }
 @media (max-width:1023px) { .hero-phone-3d { transform:none; } }
 .hero-float { animation:float-phone 6.5s ease-in-out infinite; }
 @keyframes float-phone {
@@ -354,9 +351,10 @@ a { color:inherit; text-decoration:none; }
 /* The screen's own AmbientBackground. */
 .m-amb { position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.28; }
 .dark .m-amb { opacity:.5; }
+/* Statisch: 16 dieser Blobs (4 pro Mock-up) stecken hinter opaken Cards in einem
+   232pt breiten Screen — die Animation kostet dort mehr als sie zeigt. */
 .m-amb i {
   position:absolute; display:block; border-radius:50%; filter:blur(calc(var(--u)*26));
-  animation:amb-drift 18s ease-in-out infinite;
 }
 .m-amb i:nth-child(1) { width:78%; height:32%; top:-6%;  left:-14%; background:#4F46E5; }
 .m-amb i:nth-child(2) { width:70%; height:28%; top:22%;  right:-18%; background:#D946EF; animation-delay:-6s; }
@@ -646,15 +644,14 @@ a { color:inherit; text-decoration:none; }
   border:1px solid var(--stroke); border-radius:18px; padding:1.5rem 1.6rem; margin-bottom:1rem;
 }
 .doc h2 { font-size:1.15rem; font-weight:800; letter-spacing:-.012em; margin-bottom:.7rem; display:flex; align-items:center; gap:.55rem; }
-.doc h2 .ico { width:19px; height:19px; color:var(--accent); }
+.doc h2 .ico { width:1.1875rem; height:1.1875rem; color:var(--accent); }
 .doc h3 { font-size:.98rem; font-weight:800; margin:1.1rem 0 .4rem; }
 .doc p, .doc li { color:var(--text-sec); line-height:1.72; font-size:.94rem; }
 .doc p + p { margin-top:.8rem; }
 .doc ul { list-style:none; margin:.7rem 0 0; padding:0; }
 .doc ul li { position:relative; padding-left:1.1rem; margin-bottom:.45rem; }
-.doc ul li::before { content:""; position:absolute; left:0; top:.62em; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+.doc ul li::before { content:""; position:absolute; left:0; top:.62em; width:.3125rem; height:.3125rem; border-radius:50%; background:var(--accent); }
 .doc a { color:var(--accent); font-weight:600; }
-.doc a:hover { text-decoration:underline; }
 .doc strong { color:var(--text-pri); font-weight:700; }
 .doc .kv { display:grid; grid-template-columns:auto 1fr; gap:.35rem 1.1rem; font-size:.94rem; color:var(--text-sec); }
 .doc .kv dt { font-weight:700; color:var(--text-pri); }
@@ -664,4 +661,119 @@ a { color:inherit; text-decoration:none; }
 /* ── FOOTER ── */
 .footer { background:color-mix(in srgb, var(--surface) 82%, transparent); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border-top:1px solid var(--stroke); }
 .footer a { color:var(--text-sec); font-size:.86rem; font-weight:600; transition:color .2s ease; }
-.footer a:hover { color:var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERAKTION & ZUGÄNGLICHKEIT
+   Steht bewusst am Dateiende: die Regeln hier müssen die Basis-
+   deklarationen weiter oben überschreiben können.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── MATERIAL: KEIN GLAS AUF GLAS ──
+   Eine durchscheinende Karte auf einem durchscheinenden Band ist zwei Lagen
+   Milchglas übereinander — innerhalb der Bänder werden die Karten deshalb fest.
+   In `#features` (kein Band) bleiben sie durchscheinend: dort ist es eine Lage. */
+.band-soft .card,
+.band-soft .card-muted {
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+.band-soft .card       { background:var(--surface); }
+.band-soft .card-muted { background:var(--surf-muted); }
+
+/* ── TAP-ZIELE ──
+   Alles unter 44x44 bekommt seine Trefferfläche über ein Pseudo-Element,
+   damit die Optik unverändert bleibt. Horizontal jeweils höchstens die halbe
+   Lücke zum Nachbarn, sonst überlappen sich die Flächen. */
+.nav-link, .icon-btn, .btn-nav, .nav-brand { position:relative; }
+.nav-link::after  { content:""; position:absolute; inset:-12px -4px; }
+.icon-btn::after  { content:""; position:absolute; inset:-.3125rem; }
+.btn-nav::after   { content:""; position:absolute; inset:-5px 0; }
+.nav-brand::after { content:""; position:absolute; inset:-6px -4px; }
+@media (min-width:640px) {
+  .nav-link::after { inset:-12px -10px; }
+}
+/* Die Footer-Links haben keine Nachbarn in der Breite: echte Höhe statt Pseudo. */
+.footer a { display:inline-flex; align-items:center; min-height:44px; }
+
+/* ── HOVER ──
+   Nur dort, wo es einen echten Zeiger gibt. Auf iPhone und iPad feuert
+   :hover entweder gar nicht oder klebt nach dem Tap am Element fest. */
+@media (hover: hover) and (pointer: fine) {
+  .icon-btn:hover     { background:var(--surf-muted); color:var(--text-pri); }
+  .nav-link:hover     { color:var(--text-pri); }
+  .btn-primary:hover  { transform:translateY(-2px); box-shadow:0 14px 34px var(--shadow-accent); filter:brightness(1.06); }
+  .btn-outline:hover  { transform:translateY(-2px); border-color:var(--accent); }
+  .btn-nav:hover      { transform:translateY(-1px); filter:brightness(1.08); }
+  .btn-ghost:hover    { background:rgba(255,255,255,.24); }
+  .btn-solid:hover    { transform:translateY(-2px); }
+  .pbadge:hover       { transform:translateY(-1px); background:color-mix(in srgb, var(--accent) 10%, transparent); }
+  .card:hover         { transform:translateY(-3px); box-shadow:0 2px 4px rgba(16,16,32,.05), 0 16px 36px rgba(16,16,32,.10); }
+  .dark .card:hover   { border-color:rgba(139,133,255,.28); box-shadow:0 14px 40px rgba(0,0,0,.5); }
+  .hero-phone-3d:hover{ transform:rotateY(-7deg) rotateX(2deg) rotateZ(.5deg); }
+  .doc a:hover        { text-decoration:underline; }
+  .footer a:hover     { color:var(--accent); }
+}
+
+/* ── PRESS ──
+   Feedback gehört auf pointer-down, nicht auf den Klick. Steht nach dem
+   Hover-Block, damit der Druck am Desktop den Lift überschreibt. */
+.btn-primary:active, .btn-outline:active, .btn-solid:active,
+.btn-ghost:active, .btn-nav:active, .pbadge:active {
+  transform:scale(.97);
+  transition:transform 100ms ease-out;
+}
+.icon-btn:active { transform:scale(.92); transition:transform 100ms ease-out; }
+.nav-link:active, .footer a:active, .doc a:active { color:var(--accent); }
+/* Kein grauer Tap-Kasten über dem eigenen Feedback. */
+a, button { -webkit-tap-highlight-color:transparent; }
+
+/* ── OHNE JAVASCRIPT ──
+   Ohne diese Regel bleiben die .reveal-Blöcke dauerhaft auf opacity:0,
+   wenn der IntersectionObserver nie läuft. */
+.no-js .reveal { opacity:1; transform:none; }
+
+/* ── REDUZIERTE BEWEGUNG ──
+   Kein Totalausfall, sondern die sanftere Variante: Slides werden zu
+   Überblendungen, Dauerschleifen halten an. Der Theme-Wechsel behält
+   bewusst seine 250ms — abrupte Helligkeitssprünge sind genau das,
+   wovor diese Einstellung schützen soll. */
+@media (prefers-reduced-motion: reduce) {
+  .amb, .hero-float          { animation:none; }
+  .hero-phone-3d             { transition:none; }
+  .reveal                    { transition:opacity 200ms ease; transform:none; }
+  .reveal:not(.in)           { transform:none; }
+  .card, .btn-primary, .btn-outline, .btn-nav, .btn-solid, .pbadge {
+    transition:background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary:active, .btn-outline:active, .btn-solid:active,
+  .btn-ghost:active, .btn-nav:active, .pbadge:active, .icon-btn:active {
+    transform:none; background-color:var(--surf-strong);
+  }
+  html { scroll-behavior:auto; }
+}
+
+/* ── REDUZIERTE TRANSPARENZ ──
+   24 Flächen auf der Seite tragen backdrop-filter; hier werden sie fest. */
+@media (prefers-reduced-transparency: reduce) {
+  .nav-blur, .band-soft, .band-soft.alt, .card, .card-muted,
+  .footer, .doc section, .m-tabs {
+    backdrop-filter:none; -webkit-backdrop-filter:none;
+  }
+  .nav-blur, .card, .footer, .doc section { background:var(--surface); }
+  .band-soft     { background:var(--surface); }
+  .band-soft.alt { background:var(--surf-muted); }
+  .card-muted    { background:var(--surf-muted); }
+  .m-tabs        { background:var(--m-surf); }
+  .ambient       { opacity:.10; }
+  .dark .ambient { opacity:.16; }
+}
+
+/* ── ERHÖHTER KONTRAST ── */
+@media (prefers-contrast: more) {
+  .card, .card-muted, .doc section, .stat-tile {
+    background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none;
+    border-color:var(--text-ter);
+  }
+  .ambient  { opacity:.08; }
+  .nav-blur { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .body-lg, .nav-link, .footer a, .doc p, .doc li { color:var(--text-pri); }
+}
