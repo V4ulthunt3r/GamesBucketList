@@ -49,18 +49,20 @@
 
 <main class="flex-1 doc">
   <h1>Privacy Policy</h1>
-  <p class="doc-meta">Games Bucket List for iPhone and iPad · Last updated: 14 August 2026</p>
+  <p class="doc-meta">Games Bucket List for iPhone and iPad · Last updated: 4 September 2026</p>
 
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> The short version</h2>
     <p>
       Games Bucket List has no user account and no login. Your library — games, statuses, ratings, notes and lists —
-      is stored on your device and, if you are signed in to iCloud, synchronised through <strong>your own</strong>
-      private iCloud database. I never see it.
+      is stored on your device and, if you are signed in to iCloud and hold a Pro subscription, synchronised through
+      <strong>your own</strong> private iCloud database. I never see it — with one exception you trigger yourself:
+      a list you decide to publish becomes a public page (section 10).
     </p>
     <p>
-      The app contains no analytics SDK, no advertising, no tracking pixels and no third-party trackers. The only
-      thing that leaves your device during normal use is what you look up in the game catalog.
+      The app contains no analytics SDK, no advertising, no tracking pixels and no third-party trackers. Apart from the
+      purchase SDK behind the subscription (section 9), what leaves your device is what you look up in the game catalog,
+      the title lookup for a link you share into the app (section 5), and any list you publish yourself.
     </p>
   </section>
 
@@ -69,7 +71,7 @@
     <dl class="kv">
       <dt>Name</dt><dd>Peter Hildel</dd>
       <dt>Address</dt><dd>Gustav-Adolf-Str. 19, 90513 Zirndorf, Germany</dd>
-      <dt>Email</dt><dd><a href="mailto:peter@hildel.com">peter@hildel.com</a></dd>
+      <dt>Email</dt><dd><a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a></dd>
     </dl>
     <p>
       Controller within the meaning of Art. 4(7) GDPR for the processing described below.
@@ -95,9 +97,10 @@
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg> 3. iCloud sync (Apple CloudKit)</h2>
     <p>
-      If you are signed in to iCloud on your device, the app synchronises your library through Apple's CloudKit into
-      the <strong>private database of your own iCloud account</strong>. That storage area is under your control, not mine —
-      I have no access to it and receive no copy, no key and no statistics about it.
+      If you are signed in to iCloud on your device and hold a Pro subscription (section 9), the app synchronises your
+      library through Apple's CloudKit into the <strong>private database of your own iCloud account</strong>. That
+      storage area is under your control, not mine — I have no access to it and receive no copy, no key and no
+      statistics about it.
     </p>
     <p>
       Apple Inc. / Apple Distribution International Ltd. acts as the operator of iCloud; the processing is governed by
@@ -106,7 +109,8 @@
     </p>
     <p>
       You can stop the sync at any time by signing out of iCloud or turning off iCloud Drive for the app in
-      iOS Settings. The app then keeps working locally. To delete data already synced, remove the entries in the app
+      iOS Settings. The app then keeps working locally, and the same happens when the subscription ends: the sync
+      pauses, nothing is deleted. To delete data already synced, remove the entries in the app
       or delete the app's iCloud data via iOS Settings → your name → iCloud.
     </p>
   </section>
@@ -127,22 +131,37 @@
       <li>technical connection data such as your IP address and the time of the request, which any web server receives.</li>
     </ul>
     <p>
-      Your library, your ratings and your notes are never part of these requests. No user account, device identifier or
+      Your library, your ratings and your notes are never part of these requests — what a list you publish yourself
+      carries instead is described in section 10. No user account, device identifier or
       advertising ID is transmitted, and the requests are not used to build a profile.
       Legal basis: Art. 6(1)(b) GDPR (providing the functionality you requested).
     </p>
     <p>
-      Cover images are downloaded from the image server the catalog points to and cached on your device. As with any
-      image on the web, that server sees your IP address at the moment of download.
+      Cover images are downloaded from the IGDB image server the catalog points to — <strong>images.igdb.com</strong>,
+      operated by Twitch Interactive, Inc. — and cached on your device. As with any image on the web, that server sees
+      your IP address at the moment of download.
     </p>
   </section>
 
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg> 5. The share extension</h2>
     <p>
-      When you share a link or a piece of text into Games Bucket List, the extension stores it in a shared container on
-      your device and hands it to the app on the next launch. The title is matched against the catalog as described in
-      section 4. Nothing else about the shared content is transmitted.
+      When you share a link or a piece of text into Games Bucket List, the extension writes it into a shared container
+      on your device and makes the network requests itself, without waiting for the app to launch. The title it ends up
+      with is matched against the catalog as described in section 4.
+    </p>
+    <p>
+      To find out what a shared link is called, your device asks the provider of that link directly — and for this it
+      sends the <strong>full URL</strong>:
+    </p>
+    <ul>
+      <li>for a YouTube link, the oEmbed interface of <strong>youtube.com</strong> (Google), which returns the title of the video,</li>
+      <li>for every other link, Apple's LinkPresentation, which fetches the shared page itself.</li>
+    </ul>
+    <p>
+      These requests go from your device to that provider and not through my catalog service, so that provider sees your
+      IP address and the URL you shared — just as it would if you opened the link in a browser. What reaches me is still
+      only the resulting title plus the platform and the game's ID on it, never the full URL.
     </p>
   </section>
 
@@ -164,6 +183,11 @@
       tracking of any kind.
     </p>
     <p>
+      The app does contain one SDK from a third party: RevenueCat, which handles the subscription (section 9). That is
+      purchase infrastructure, not tracking — it runs without a user identity, without attribution and without an
+      advertising ID.
+    </p>
+    <p>
       If you choose to send crash and usage data to Apple in iOS Settings → Privacy &amp; Security → Analytics, Apple may
       share aggregated crash reports with me as the developer. That is an Apple setting you control, and the reports
       contain no personal library content.
@@ -174,14 +198,66 @@
     <h2><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> 8. App Store and purchases</h2>
     <p>
       The app is distributed through Apple's App Store. Download, updates and any payment processing are handled by
-      Apple; I only receive anonymous, aggregated sales statistics through App Store Connect. The current version offers
-      no in-app purchases or subscriptions. Should paid features be added later, they will be processed by Apple and this
-      policy will be updated first.
+      Apple; I only receive anonymous, aggregated sales statistics through App Store Connect.
+    </p>
+    <p>
+      The app offers <strong>Pro</strong>, an auto-renewable subscription available monthly or yearly, which unlocks the
+      paid features — among them iCloud sync and publishing lists. Purchase, renewal and cancellation all run through
+      your App Store account: Apple handles the billing, and I receive no payment data at all — no card number, no
+      billing address, no name. You manage or cancel the subscription in iOS Settings → your name → Subscriptions.
+      Which store client the app uses for this is described in section 9.
     </p>
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 9. This website</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg> 9. Purchases and subscriptions (RevenueCat)</h2>
+    <p>
+      The store client for the Pro subscription is the SDK of RevenueCat, Inc., 1032 E Brandon Blvd #3003, Brandon,
+      FL 33511, USA. It is the only third-party SDK in the app and it is configured anonymously on purpose: the app
+      never signs you in to it and hands it no user identity, no attribution data and no advertising ID.
+    </p>
+    <p>What is processed there:</p>
+    <ul>
+      <li>an anonymous app user ID the SDK generates itself,</li>
+      <li>your purchase and subscription status,</li>
+      <li>the App Store transaction data belonging to it,</li>
+      <li>technical connection data: device, OS and app version, IP address and the time of the request.</li>
+    </ul>
+    <p>
+      The payment itself runs exclusively through Apple; I receive no payment data.
+      Legal basis: Art. 6(1)(b) GDPR (providing the functionality you requested).
+    </p>
+  </section>
+
+  <section>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg> 10. Lists you publish</h2>
+    <p>
+      You can publish an individual list as a public link. That is always a deliberate act, one list at a time, and it
+      never happens automatically. When you do, this leaves your device and is stored by the service described in
+      section 4:
+    </p>
+    <ul>
+      <li>the name of the list,</li>
+      <li>its description, if it has one,</li>
+      <li>its entries in order as catalog IDs — a manually kept title only for an entry with no catalog match,</li>
+      <li>and, only if you switch that on for this list, the status and rating of each entry.</li>
+    </ul>
+    <p>
+      Explicitly <em>not</em> included are your personal notes, the timestamps from your library (added, started,
+      finished), the source link an entry came from, the catalog matching state — and nothing that identifies you or
+      your device, your profile name and avatar included.
+    </p>
+    <p>
+      The page can be opened by anyone who has the link. No account is created for it: the permission to change or
+      withdraw the list is a token issued exactly once, of which the server keeps only a hash. What you publish is a
+      snapshot, not a live mirror of your library — it changes only when you update it. Withdrawing deletes the record
+      on the server, and withdrawing is never tied to the subscription.
+      Legal basis: Art. 6(1)(b) GDPR (providing the functionality you requested).
+    </p>
+  </section>
+
+  <section>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 11. This website</h2>
     <p>
       This website is static and hosted on GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA
       94107, USA). When you visit it, the hosting provider processes technical connection data — IP address, time of
@@ -197,10 +273,15 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 10. Recipients and transfers outside the EU</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 12. Recipients and transfers outside the EU</h2>
     <ul>
-      <li><strong>Apple</strong> — iCloud sync, App Store distribution.</li>
-      <li><strong>Vercel Inc.</strong> — hosting of the catalog service.</li>
+      <li><strong>Apple</strong> — iCloud sync, App Store distribution, payment processing.</li>
+      <li><strong>RevenueCat, Inc.</strong> — store client for the Pro subscription.</li>
+      <li><strong>Vercel Inc.</strong> — hosting of the catalog service and of the published list pages.</li>
+      <li><strong>Neon</strong> — the database behind the published lists, obtained through Vercel.</li>
+      <li><strong>Google</strong> — title lookup for a shared YouTube link (youtube.com oEmbed).</li>
+      <li><strong>The operator of a page you share</strong> — link preview through Apple's LinkPresentation.</li>
+      <li><strong>Twitch Interactive, Inc.</strong> — the IGDB image server that delivers cover art.</li>
       <li><strong>GitHub Inc.</strong> — hosting of this website.</li>
     </ul>
     <p>
@@ -210,16 +291,17 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 11. Retention and your rights</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 13. Retention and your rights</h2>
     <p>
-      Library data is kept for as long as you keep it in the app. Catalog requests are processed to answer them; server
-      logs at the hosting providers are deleted according to their own retention periods (typically a few days to weeks).
+      Library data is kept for as long as you keep it in the app. A list you published stays on the server until you
+      withdraw it; withdrawing deletes the record. Catalog requests are processed to answer them; server logs at the
+      hosting providers are deleted according to their own retention periods (typically a few days to weeks).
     </p>
     <p>
       You have the right to information (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing
       (Art. 18), data portability (Art. 20) and to object (Art. 21 GDPR). One email to
-      <a href="mailto:peter@hildel.com">peter@hildel.com</a> is enough. Because the app stores no personal data on my
-      side, a request for information will usually be answered with exactly that.
+      <a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a> is enough. Because the app
+      stores no personal data on my side, a request for information will usually be answered with exactly that.
     </p>
     <p>
       You also have the right to lodge a complaint with a supervisory authority — for me that is the
@@ -228,7 +310,7 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 12. Changes to this policy</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 14. Changes to this policy</h2>
     <p>
       If the app gains features that change how data is handled, this page will be updated before those features ship.
       The date at the top always shows the current version.

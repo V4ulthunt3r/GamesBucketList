@@ -49,18 +49,21 @@
 
 <main class="flex-1 doc">
   <h1>Datenschutzerklärung</h1>
-  <p class="doc-meta">Games Bucket List für iPhone und iPad · Stand: 14. August 2026</p>
+  <p class="doc-meta">Games Bucket List für iPhone und iPad · Stand: 4. September 2026</p>
 
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Die Kurzfassung</h2>
     <p>
       Games Bucket List hat kein Benutzerkonto und keinen Login. Deine Bibliothek — Spiele, Status, Bewertungen,
-      Notizen und Listen — liegt auf deinem Gerät und wird, wenn du bei iCloud angemeldet bist, über
-      <strong>deine eigene</strong> private iCloud-Datenbank synchronisiert. Ich sehe davon nichts.
+      Notizen und Listen — liegt auf deinem Gerät und wird, wenn du bei iCloud angemeldet bist und ein Pro-Abo hast,
+      über <strong>deine eigene</strong> private iCloud-Datenbank synchronisiert. Ich sehe davon nichts — mit einer
+      Ausnahme, die du selbst auslöst: Eine Liste, die du veröffentlichst, wird zu einer öffentlichen Seite
+      (Abschnitt 10).
     </p>
     <p>
-      Die App enthält kein Analytics-SDK, keine Werbung, keine Zählpixel und keine Tracker Dritter. Das Einzige, was
-      im normalen Betrieb dein Gerät verlässt, ist das, was du im Spielekatalog nachschlägst.
+      Die App enthält kein Analytics-SDK, keine Werbung, keine Zählpixel und keine Tracker Dritter. Außer dem Kauf-SDK
+      hinter dem Abo (Abschnitt 9) verlässt dein Gerät: das, was du im Spielekatalog nachschlägst, die Titelabfrage zu
+      einem Link, den du in die App teilst (Abschnitt 5), und jede Liste, die du selbst veröffentlichst.
     </p>
   </section>
 
@@ -69,7 +72,7 @@
     <dl class="kv">
       <dt>Name</dt><dd>Peter Hildel</dd>
       <dt>Anschrift</dt><dd>Gustav-Adolf-Str. 19, 90513 Zirndorf, Deutschland</dd>
-      <dt>E-Mail</dt><dd><a href="mailto:peter@hildel.com">peter@hildel.com</a></dd>
+      <dt>E-Mail</dt><dd><a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a></dd>
     </dl>
     <p>
       Verantwortlicher im Sinne von Art. 4 Nr. 7 DSGVO für die nachstehend beschriebenen Verarbeitungen.
@@ -96,10 +99,10 @@
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg> 3. iCloud-Synchronisation (Apple CloudKit)</h2>
     <p>
-      Bist du auf deinem Gerät bei iCloud angemeldet, synchronisiert die App deine Bibliothek über Apples CloudKit in
-      die <strong>private Datenbank deines eigenen iCloud-Accounts</strong>. Dieser Speicherbereich steht unter deiner
-      Kontrolle, nicht unter meiner — ich habe keinen Zugriff darauf und erhalte weder eine Kopie noch einen Schlüssel
-      noch Statistiken dazu.
+      Bist du auf deinem Gerät bei iCloud angemeldet und hast ein Pro-Abo (Abschnitt 9), synchronisiert die App deine
+      Bibliothek über Apples CloudKit in die <strong>private Datenbank deines eigenen iCloud-Accounts</strong>. Dieser
+      Speicherbereich steht unter deiner Kontrolle, nicht unter meiner — ich habe keinen Zugriff darauf und erhalte
+      weder eine Kopie noch einen Schlüssel noch Statistiken dazu.
     </p>
     <p>
       Betreiberin von iCloud ist Apple Inc. bzw. Apple Distribution International Ltd.; für diese Verarbeitung gilt die
@@ -108,7 +111,8 @@
     </p>
     <p>
       Du kannst die Synchronisation jederzeit beenden, indem du dich von iCloud abmeldest oder iCloud für die App in den
-      iOS-Einstellungen deaktivierst. Die App funktioniert dann lokal weiter. Bereits synchronisierte Daten löschst du,
+      iOS-Einstellungen deaktivierst. Die App funktioniert dann lokal weiter. Dasselbe passiert, wenn das Abo endet:
+      Die Synchronisation pausiert, gelöscht wird nichts. Bereits synchronisierte Daten löschst du,
       indem du die Einträge in der App entfernst oder die iCloud-Daten der App über iOS-Einstellungen → dein Name →
       iCloud löschst.
     </p>
@@ -130,13 +134,15 @@
       <li>technische Verbindungsdaten wie IP-Adresse und Zeitpunkt der Anfrage, die jeder Webserver erhält.</li>
     </ul>
     <p>
-      Deine Bibliothek, deine Bewertungen und deine Notizen sind niemals Teil dieser Anfragen. Es werden kein
+      Deine Bibliothek, deine Bewertungen und deine Notizen sind niemals Teil dieser Anfragen — was eine von dir selbst
+      veröffentlichte Liste stattdessen enthält, steht in Abschnitt 10. Es werden kein
       Benutzerkonto, keine Gerätekennung und keine Werbe-ID übertragen, und die Anfragen werden nicht zu einem Profil
       zusammengeführt. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir gewünschten Funktion).
     </p>
     <p>
-      Cover-Bilder werden von dem Bildserver geladen, auf den der Katalog verweist, und auf dem Gerät zwischengespeichert.
-      Wie bei jedem Bild im Web sieht dieser Server dabei deine IP-Adresse.
+      Cover-Bilder werden vom IGDB-Bildserver geladen, auf den der Katalog verweist — <strong>images.igdb.com</strong>,
+      betrieben von Twitch Interactive, Inc. — und auf dem Gerät zwischengespeichert. Wie bei jedem Bild im Web sieht
+      dieser Server dabei deine IP-Adresse.
     </p>
   </section>
 
@@ -144,8 +150,21 @@
     <h2><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg> 5. Die Share Extension</h2>
     <p>
       Wenn du einen Link oder einen Text in Games Bucket List teilst, legt die Erweiterung ihn in einem gemeinsamen
-      Container auf deinem Gerät ab und übergibt ihn beim nächsten Start an die App. Der Titel wird wie in Abschnitt 4
-      beschrieben mit dem Katalog abgeglichen. Darüber hinaus wird nichts vom geteilten Inhalt übertragen.
+      Container auf deinem Gerät ab und macht die Netzwerkaufrufe selbst, ohne auf den nächsten Start der App zu warten.
+      Der ermittelte Titel wird wie in Abschnitt 4 beschrieben mit dem Katalog abgeglichen.
+    </p>
+    <p>
+      Um herauszufinden, wie ein geteilter Link heißt, fragt dein Gerät den jeweiligen Anbieter direkt — und schickt dazu
+      die <strong>vollständige URL</strong>:
+    </p>
+    <ul>
+      <li>bei einem YouTube-Link an die oEmbed-Schnittstelle von <strong>youtube.com</strong> (Google), die den Titel des Videos zurückgibt,</li>
+      <li>bei jedem anderen Link an Apples LinkPresentation, das die geteilte Seite selbst abruft.</li>
+    </ul>
+    <p>
+      Diese Aufrufe gehen von deinem Gerät zum jeweiligen Anbieter und nicht über meinen Katalogdienst. Der Anbieter
+      sieht dabei also deine IP-Adresse und die aufgerufene URL — genauso, wie wenn du den Link im Browser öffnest. Zu
+      mir geht weiterhin nur der ermittelte Titel plus Plattform und Spiel-ID, nie die vollständige URL.
     </p>
   </section>
 
@@ -167,6 +186,10 @@
       <strong>kein</strong> Tracking.
     </p>
     <p>
+      Ein SDK eines Dritten enthält die App allerdings: RevenueCat, das das Abo abwickelt (Abschnitt 9). Das ist
+      Kauf-Infrastruktur, kein Tracking — es läuft ohne Nutzer-Identität, ohne Attribution und ohne Werbe-ID.
+    </p>
+    <p>
       Wenn du in iOS-Einstellungen → Datenschutz &amp; Sicherheit → Analyse der Übermittlung von Absturz- und
       Nutzungsdaten an Apple zustimmst, kann Apple mir als Entwickler aggregierte Absturzberichte bereitstellen. Das ist
       eine Apple-Einstellung, die du kontrollierst; die Berichte enthalten keine Inhalte aus deiner Bibliothek.
@@ -177,14 +200,67 @@
     <h2><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg> 8. App Store und Käufe</h2>
     <p>
       Die App wird über Apples App Store vertrieben. Download, Updates und eine etwaige Zahlungsabwicklung übernimmt
-      Apple; ich erhalte über App Store Connect lediglich anonyme, aggregierte Verkaufsstatistiken. Die aktuelle Version
-      bietet keine In-App-Käufe oder Abonnements an. Sollten später kostenpflichtige Funktionen hinzukommen, werden
-      diese über Apple abgewickelt und diese Erklärung wird vorher aktualisiert.
+      Apple; ich erhalte über App Store Connect lediglich anonyme, aggregierte Verkaufsstatistiken.
+    </p>
+    <p>
+      Die App bietet <strong>Pro</strong> an, ein automatisch verlängerbares Abonnement, monatlich oder jährlich, das
+      die kostenpflichtigen Funktionen freischaltet — darunter die iCloud-Synchronisation und das Veröffentlichen von
+      Listen. Kauf, Verlängerung und Kündigung laufen über deinen App-Store-Account: Die Zahlung wickelt Apple ab, und
+      ich erhalte keinerlei Zahlungsdaten — keine Kartennummer, keine Rechnungsanschrift, keinen Namen. Verwalten oder
+      kündigen kannst du das Abo in den iOS-Einstellungen → dein Name → Abonnements. Welcher Store-Client dafür in der
+      App steckt, steht in Abschnitt 9.
     </p>
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 9. Diese Website</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg> 9. Kauf- und Abowicklung (RevenueCat)</h2>
+    <p>
+      Als Store-Client für das Pro-Abo steckt in der App das SDK von RevenueCat, Inc., 1032 E Brandon Blvd #3003,
+      Brandon, FL 33511, USA. Es ist das einzige SDK eines Dritten in der App und bewusst anonym eingerichtet: Die App
+      meldet dich dort nie an und übergibt weder eine Nutzer-Identität noch Attributionsdaten noch eine Werbe-ID.
+    </p>
+    <p>Verarbeitet werden dort:</p>
+    <ul>
+      <li>eine anonyme App-User-ID, die das SDK selbst erzeugt,</li>
+      <li>dein Kauf- und Abostatus,</li>
+      <li>die zugehörigen App-Store-Transaktionsdaten,</li>
+      <li>technische Verbindungsdaten: Gerät, Betriebssystem- und App-Version, IP-Adresse und Zeitpunkt der Anfrage.</li>
+    </ul>
+    <p>
+      Die Zahlung selbst läuft ausschließlich über Apple; ich bekomme keine Zahlungsdaten.
+      Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir gewünschten Funktion).
+    </p>
+  </section>
+
+  <section>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg> 10. Listen, die du veröffentlichst</h2>
+    <p>
+      Du kannst eine einzelne Liste als öffentlichen Link veröffentlichen. Das ist immer eine ausdrückliche Entscheidung,
+      Liste für Liste, und passiert nie automatisch. Dabei verlässt Folgendes dein Gerät und wird von dem in Abschnitt 4
+      beschriebenen Dienst gespeichert:
+    </p>
+    <ul>
+      <li>der Name der Liste,</li>
+      <li>ihre Beschreibung, falls vorhanden,</li>
+      <li>ihre Einträge in Reihenfolge als Katalog-IDs — ein manuell gepflegter Titel nur bei einem Eintrag ohne Katalogtreffer,</li>
+      <li>und, nur wenn du das für diese Liste einschaltest, Status und Bewertung je Eintrag.</li>
+    </ul>
+    <p>
+      Ausdrücklich <em>nicht</em> dabei sind deine persönlichen Notizen, die Zeitstempel aus deiner Bibliothek
+      (Hinzugefügt, Gestartet, Abgeschlossen), die geteilte Quell-URL eines Eintrags, die Katalog-Matching-Zustände —
+      und nichts, was dich oder dein Gerät identifiziert, Profilname und Avatar eingeschlossen.
+    </p>
+    <p>
+      Die Seite ist für jeden abrufbar, der den Link hat. Ein Konto entsteht dabei nicht: Die Berechtigung zum Ändern und
+      Zurückziehen ist ein einmalig ausgegebenes Token, von dem der Server nur einen Hash speichert. Veröffentlichtes ist
+      eine Momentaufnahme, kein Live-Spiegel deiner Bibliothek — es ändert sich nur, wenn du es aktualisierst.
+      Zurückziehen löscht den Datensatz auf dem Server, und Zurückziehen ist nie an das Abo gebunden.
+      Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von dir gewünschten Funktion).
+    </p>
+  </section>
+
+  <section>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 11. Diese Website</h2>
     <p>
       Diese Website ist statisch und wird auf GitHub Pages gehostet (GitHub Inc., 88 Colin P. Kelly Jr. Street, San
       Francisco, CA 94107, USA). Beim Aufruf verarbeitet der Hoster technische Verbindungsdaten — IP-Adresse, Zeitpunkt
@@ -201,10 +277,15 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 10. Empfänger und Drittlandtransfer</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 12. Empfänger und Drittlandtransfer</h2>
     <ul>
-      <li><strong>Apple</strong> — iCloud-Synchronisation, Vertrieb über den App Store.</li>
-      <li><strong>Vercel Inc.</strong> — Hosting des Katalogdienstes.</li>
+      <li><strong>Apple</strong> — iCloud-Synchronisation, Vertrieb über den App Store, Zahlungsabwicklung.</li>
+      <li><strong>RevenueCat, Inc.</strong> — Store-Client für das Pro-Abo.</li>
+      <li><strong>Vercel Inc.</strong> — Hosting des Katalogdienstes und der veröffentlichten Listenseiten.</li>
+      <li><strong>Neon</strong> — Datenbank hinter den veröffentlichten Listen, bezogen über Vercel.</li>
+      <li><strong>Google</strong> — Titelabfrage zu einem geteilten YouTube-Link (oEmbed von youtube.com).</li>
+      <li><strong>Der Betreiber einer Seite, die du teilst</strong> — Linkvorschau über Apples LinkPresentation.</li>
+      <li><strong>Twitch Interactive, Inc.</strong> — IGDB-Bildserver, der die Cover ausliefert.</li>
       <li><strong>GitHub Inc.</strong> — Hosting dieser Website.</li>
     </ul>
     <p>
@@ -215,17 +296,18 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 11. Speicherdauer und deine Rechte</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 13. Speicherdauer und deine Rechte</h2>
     <p>
-      Bibliotheksdaten bleiben so lange erhalten, wie du sie in der App behältst. Kataloganfragen werden zur
+      Bibliotheksdaten bleiben so lange erhalten, wie du sie in der App behältst. Eine veröffentlichte Liste bleibt auf
+      dem Server liegen, bis du sie zurückziehst; das Zurückziehen löscht den Datensatz. Kataloganfragen werden zur
       Beantwortung verarbeitet; Server-Logs bei den Hostern werden nach deren eigenen Fristen gelöscht (üblicherweise
       wenige Tage bis Wochen).
     </p>
     <p>
       Dir stehen die Rechte auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der
       Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO) zu. Eine E-Mail an
-      <a href="mailto:peter@hildel.com">peter@hildel.com</a> genügt. Da die App auf meiner Seite keine personenbezogenen
-      Daten speichert, wird eine Auskunft in der Regel genau das ergeben.
+      <a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a> genügt. Da die App auf meiner
+      Seite keine personenbezogenen Daten speichert, wird eine Auskunft in der Regel genau das ergeben.
     </p>
     <p>
       Außerdem hast du das Recht auf Beschwerde bei einer Aufsichtsbehörde — für mich ist das das
@@ -234,7 +316,7 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 12. Änderungen dieser Erklärung</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 14. Änderungen dieser Erklärung</h2>
     <p>
       Kommen Funktionen hinzu, die etwas am Umgang mit Daten ändern, wird diese Seite aktualisiert, bevor die Funktionen
       ausgeliefert werden. Das Datum oben zeigt immer die aktuelle Fassung.
