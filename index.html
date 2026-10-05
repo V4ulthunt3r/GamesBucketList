@@ -26,7 +26,7 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/fonts.css?v=1">
-  <link rel="stylesheet" href="assets/landing.css?v=11">
+  <link rel="stylesheet" href="assets/landing.css?v=12">
   <link rel="stylesheet" href="assets/tailwind.css?v=1">
 </head>
 <body class="min-h-screen flex flex-col">
@@ -305,6 +305,28 @@
     </div>
   </section>
 
+  <!-- ══ VIDEO ══ -->
+  <section id="video" class="section">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-2xl mb-12">
+        <p class="eyebrow flex items-center gap-2 mb-4 reveal">
+          <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-play"/></svg> In motion
+        </p>
+        <h2 class="headline mb-5 reveal d1">Forty seconds instead of a thousand words.</h2>
+        <p class="body-lg reveal d2">The version 1.1 teaser — what Games Bucket List feels like in your hand.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="yt" data-yt="8FqzOhBgnYI">
+          <button type="button" class="yt-play" aria-label="Play video: version 1.1 teaser (loads YouTube)">
+            <img src="assets/video/teaser-1-1.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
+            <span class="yt-btn"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span>
+          </button>
+        </div>
+        <p class="yt-note">Playing the video loads it from YouTube — see the <a href="privacy.html">privacy policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ PRIVACY ══ -->
   <section id="privacy" class="band section relative overflow-hidden">
     <div class="max-w-5xl mx-auto px-6 relative text-center">
@@ -418,6 +440,20 @@
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     paintIcon();
+  });
+
+  /* Video: YouTube is only loaded on click (youtube-nocookie). */
+  document.querySelectorAll('.yt[data-yt]').forEach((box) => {
+    box.querySelector('.yt-play').addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+      f.title = 'Games Bucket List – version 1.1 teaser';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(f);
+      f.focus();
+    });
   });
 
   /* Scroll reveal */
