@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games Bucket List – Every game you'll play someday, in one place.</title>
   <meta name="apple-itunes-app" content="app-id=6799535208">
-  <meta name="description" content="Games Bucket List is an iPhone and iPad app for the games you keep meaning to play. Save them from any app, track what you're playing, rate what you finished — private, offline-first and synced through your own iCloud.">
+  <meta name="description" content="Games Bucket List is an iPhone and iPad app for the games you keep meaning to play. Save them from any app, track what you're playing, rate what you finished — private, offline-first, with optional iCloud sync through your own iCloud.">
   <meta name="theme-color" content="#4F46E5">
   <link rel="alternate" hreflang="en" href="index.html">
   <link rel="alternate" hreflang="de" href="index-de.html">
@@ -237,8 +237,8 @@
           <div class="feat-icon spark mb-5"><svg class="ico ico-feat" aria-hidden="true"><use href="#i-cloud"/></svg></div>
           <h3 class="title3 mb-2.5">Your iCloud, your library</h3>
           <p class="text-sm leading-relaxed" style="color:var(--text-sec)">
-            The library lives on your device and syncs to your other devices through your own iCloud account.
-            No iCloud, or no signal? Everything keeps working locally.
+            The library lives on your device. With Pro, turn on iCloud sync and it syncs to your other devices
+            through your own iCloud account. No iCloud, or no signal? Everything keeps working locally.
           </p>
         </div>
         <div class="card p-7 reveal d3">
@@ -313,17 +313,26 @@
         <p class="eyebrow flex items-center gap-2 mb-4 reveal">
           <svg class="ico ico-eyebrow" aria-hidden="true"><use href="#i-play"/></svg> In motion
         </p>
-        <h2 class="headline mb-5 reveal d1">Forty seconds instead of a thousand words.</h2>
-        <p class="body-lg reveal d2">The version 1.1 teaser — what Games Bucket List feels like in your hand.</p>
+        <h2 class="headline mb-5 reveal d1">Thirty-one seconds instead of a thousand words.</h2>
+        <p class="body-lg reveal d2">The version 1.1 teaser — your Steam, Xbox and PlayStation games in one backlog.</p>
       </div>
       <div class="reveal d2">
-        <div class="yt" data-yt="8FqzOhBgnYI">
+        <div class="yt" data-yt="3Xx6gb_6Y6o" data-title="Games Bucket List – version 1.1 teaser">
           <button type="button" class="yt-play" aria-label="Play video: version 1.1 teaser (loads YouTube)">
             <img src="assets/video/teaser-1-1.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
             <span class="yt-btn"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span>
           </button>
         </div>
         <p class="yt-note">Playing the video loads it from YouTube — see the <a href="privacy.html">privacy policy</a>.</p>
+      </div>
+      <div class="max-w-2xl mx-auto reveal" style="margin-top:3.5rem">
+        <div class="yt" data-yt="8FqzOhBgnYI" data-title="Games Bucket List – version 1.0 launch teaser">
+          <button type="button" class="yt-play" aria-label="Play video: version 1.0 launch teaser (loads YouTube)">
+            <img src="assets/video/teaser-1-0.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
+            <span class="yt-btn"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg></span>
+          </button>
+        </div>
+        <p class="dev-label"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Where it started: the version 1.0 launch teaser</p>
       </div>
     </div>
   </section>
@@ -334,7 +343,7 @@
       <div class="cta-glyph reveal">
         <svg class="ico ico-cta" aria-hidden="true"><use href="#i-shield"/></svg>
       </div>
-      <h2 class="headline mb-5 reveal d1" style="color:#fff">No account. No tracking. No ads.</h2>
+      <h2 class="headline mb-5 reveal d1" style="color:#fff">No account. No tracking. No ads with Pro.</h2>
       <p class="body-lg band-sub max-w-2xl mx-auto mb-12 reveal d2" style="color:rgba(255,255,255,.72)">
         A bucket list is a private thing. Games Bucket List has no login, ships without an analytics SDK,
         and never sells the fact that you still haven't finished that RPG.
@@ -352,7 +361,7 @@
           <svg class="ico ico-feat mb-4" style="color:#fff" aria-hidden="true"><use href="#i-cloud"/></svg>
           <h3 class="title3 mb-2" style="color:#fff">Syncs through your iCloud</h3>
           <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.7)">
-            If you're signed in to iCloud, your library moves between your devices in your own private CloudKit
+            Turn on iCloud sync with Pro and your library moves between your devices in your own private CloudKit
             database — the same place your other Apple data lives.
           </p>
         </div>
@@ -446,7 +455,7 @@
     box.querySelector('.yt-play').addEventListener('click', () => {
       const f = document.createElement('iframe');
       f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
-      f.title = 'Games Bucket List – version 1.1 teaser';
+      f.title = box.dataset.title;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       f.referrerPolicy = 'strict-origin-when-cross-origin';

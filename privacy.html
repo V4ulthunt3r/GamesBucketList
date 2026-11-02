@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Games Bucket List</title>
-  <meta name="description" content="How Games Bucket List handles your data: stored on your device, synced through your own iCloud, no account, no tracking, no ads.">
+  <meta name="description" content="How Games Bucket List handles your data: stored on your device, iCloud sync only when you turn it on with Pro, optional Discovery notifications, no account, no tracking, an ad banner only in the free version.">
   <meta name="robots" content="index,follow">
   <link rel="alternate" hreflang="en" href="privacy.html">
   <link rel="alternate" hreflang="de" href="privacy-de.html">
@@ -50,20 +50,23 @@
 
 <main class="flex-1 doc">
   <h1>Privacy Policy</h1>
-  <p class="doc-meta">Games Bucket List for iPhone and iPad · Last updated: 5 October 2026</p>
+  <p class="doc-meta">Games Bucket List for iPhone and iPad · Last updated: 2 November 2026</p>
 
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> The short version</h2>
     <p>
       Games Bucket List has no user account and no login. Your library — games, statuses, ratings, notes and lists —
-      is stored on your device and, if you are signed in to iCloud and hold a Pro subscription, synchronised through
-      <strong>your own</strong> private iCloud database. I never see it — with one exception you trigger yourself:
-      a list you decide to publish becomes a public page (section 10).
+      is stored on your device. It is synchronised through <strong>your own</strong> private iCloud database only if
+      you explicitly turn on iCloud sync in the app, which requires a Pro subscription (section 3). I never see your
+      library — with one exception you trigger yourself: a list you decide to publish becomes a public page
+      (section 10).
     </p>
     <p>
-      The app contains no analytics SDK, no advertising, no tracking pixels and no third-party trackers. Apart from the
-      purchase SDK behind the subscription (section 9), what leaves your device is what you look up in the game catalog,
-      the title lookup for a link you share into the app (section 5), and any list you publish yourself.
+      The app contains no analytics SDK, no tracking pixels and no tracking. In the free version it shows an ad banner
+      from Kickstart Exchange at the bottom of Settings that promotes other apps; Pro removes it (section 7). What else
+      leaves your device is what you look up in the game catalog, the title lookup for a link you share into the app
+      (section 5), the purchase data for the subscription (section 9), any list you publish yourself (section 10) and —
+      only if you turn them on — the details needed for Discovery notifications (section 11).
     </p>
   </section>
 
@@ -98,8 +101,10 @@
   <section>
     <h2><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg> 3. iCloud sync (Apple CloudKit)</h2>
     <p>
-      If you are signed in to iCloud on your device and hold a Pro subscription (section 9), the app synchronises your
-      library through Apple's CloudKit into the <strong>private database of your own iCloud account</strong>. That
+      iCloud sync is off to begin with. It starts only when you explicitly switch it on in the app under Settings →
+      iCloud Sync with the “Sync with iCloud” switch. This requires a Pro subscription (section 8) and that you are
+      signed in to iCloud on your device. The app then synchronises your library through Apple's CloudKit into the
+      <strong>private database of your own iCloud account</strong>. That
       storage area is under your control, not mine — I have no access to it and receive no copy, no key and no
       statistics about it.
     </p>
@@ -109,10 +114,10 @@
       Legal basis: Art. 6(1)(b) GDPR (providing the functionality you requested).
     </p>
     <p>
-      You can stop the sync at any time by signing out of iCloud or turning off iCloud Drive for the app in
-      iOS Settings. The app then keeps working locally, and the same happens when the subscription ends: the sync
-      pauses, nothing is deleted. To delete data already synced, remove the entries in the app
-      or delete the app's iCloud data via iOS Settings → your name → iCloud.
+      You can turn sync off at any time with the same switch, even without an active subscription. When you turn it
+      off or the subscription ends, the sync pauses and the app keeps working locally: the data on your device is kept,
+      and nothing is deleted. To delete data already synced, remove the entries in the app while sync is on, or delete
+      the app's iCloud data via iOS Settings → your name → iCloud.
     </p>
   </section>
 
@@ -180,14 +185,33 @@
     <h2><svg class="ico" aria-hidden="true"><use href="#i-eye-off"/></svg> 7. Diagnostics, analytics and advertising</h2>
     <p>
       The app writes technical log messages through Apple's system logging (OSLog) — these stay on the device and are not
-      sent anywhere. There is <strong>no</strong> analytics SDK, <strong>no</strong> advertising and <strong>no</strong>
-      tracking of any kind.
+      sent anywhere. There is <strong>no</strong> analytics SDK and <strong>no</strong> tracking; the app does not request
+      the advertising identifier (IDFA). “No analytics” means the app itself: it measures nothing about how you use it.
     </p>
     <p>
-      The app does contain one SDK from a third party: RevenueCat, which handles the subscription (section 9). That is
-      purchase infrastructure, not tracking — it runs without a user identity, without attribution and without an
-      advertising ID. “No analytics” means the app itself: it measures nothing about how you use it. What is evaluated
-      about the purchases is described in section 9.
+      The app contains two third-party SDKs: RevenueCat, which handles the subscription (section 9), and Kickstart
+      Exchange for the ad banner in the free version (below). RevenueCat is purchase infrastructure, not tracking — it
+      runs without a user identity, without attribution and without an advertising ID.
+    </p>
+    <p>
+      <strong>Ad banner (Kickstart Exchange).</strong> In the free version the app shows a banner at the bottom of
+      Settings that promotes another app. With Pro the banner is neither shown nor loaded. Kickstart Exchange is
+      operated by Hudson Heavy Industries Ltd, 37 Great Pulteney Street, Bath, BA2 4DA, United Kingdom (Companies House
+      11883499). It is a network in which apps promote each other: which app appears depends on a points system between
+      the participating apps, not on data about you. According to the provider:
+    </p>
+    <ul>
+      <li>The SDK sends the app's API key and bundle ID, the platform, the app, build and SDK version, and the country of your App Store storefront.</li>
+      <li>In App Store builds the SDK also sends an Apple-signed App Transaction (JWS), which Kickstart uses to check that this is a genuine App Store installation. According to the provider it contains stable Apple transaction and device-verification values, but it is discarded after the check and not stored, hashed, logged or analysed.</li>
+      <li>Your IP address is processed by Cloudflare, Inc., the provider's network and security service, to deliver the connection; Kickstart states that it does not store it or use it to identify anyone.</li>
+      <li>Impressions, clicks and reports are recorded at the level of the app, not of a person or device. Delivery and interaction records are kept for about 30 days; daily app-to-app statistics (app IDs, date, platform, storefront, impression and click totals) are kept without a fixed deletion date.</li>
+      <li>Kickstart states that it tracks neither users nor devices and builds no behavioural profiles.</li>
+    </ul>
+    <p>
+      If you tap the banner, the App Store page of the promoted app opens; Apple's terms apply there. The legal basis is
+      Art. 6(1)(f) GDPR (legitimate interest in co-financing the free version through mutual app promotion). An EU
+      Commission adequacy decision exists for the United Kingdom. Details:
+      <a href="https://exchange.kickstart.tools/privacy" target="_blank" rel="noopener">Kickstart Exchange privacy notice</a>.
     </p>
     <p>
       If you choose to send crash and usage data to Apple in iOS Settings → Privacy &amp; Security → Analytics, Apple may
@@ -204,7 +228,7 @@
     </p>
     <p>
       The app offers <strong>Pro</strong>, an auto-renewable subscription available monthly or yearly, which unlocks the
-      paid features — among them iCloud sync and publishing lists. Purchase, renewal and cancellation all run through
+      paid features — among them iCloud sync and publishing lists — and removes the ad banner. Purchase, renewal and cancellation all run through
       your App Store account: Apple handles the billing, and I receive no payment data at all — no card number, no
       billing address, no name. You manage or cancel the subscription in iOS Settings → your name → Subscriptions.
       Which store client the app uses for this is described in section 9.
@@ -215,7 +239,7 @@
     <h2><svg class="ico" aria-hidden="true"><use href="#i-star"/></svg> 9. Purchases and subscriptions (RevenueCat)</h2>
     <p>
       The store client for the Pro subscription is the SDK of RevenueCat, Inc., 1032 E Brandon Blvd #3003, Brandon,
-      FL 33511, USA. It is the only third-party SDK in the app and it is configured anonymously on purpose: the app
+      FL 33511, USA. It is configured anonymously on purpose: the app
       never signs you in to it and hands it no user identity, no attribution data and no advertising ID.
     </p>
     <p>What is processed there:</p>
@@ -263,7 +287,54 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 11. This website</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-sparkle"/></svg> 11. Discovery notifications (push)</h2>
+    <p>
+      Discovery notifications are optional and off to begin with. You turn them on in the app under Settings →
+      Notifications → Discovery Notifications and choose a frequency (weekly, twice a week or daily) and a time. iOS
+      asks for your permission to send notifications only when you save. Simply opening the app registers nothing.
+    </p>
+    <p>
+      When you turn them on, the app creates a random installation ID and a random secret on your device and stores both
+      in the keychain (on this device only, not synced through iCloud). It then sends the following to the service
+      described in section 4:
+    </p>
+    <ul>
+      <li>the installation ID and the secret, of which the server keeps only a SHA-256 hash,</li>
+      <li>the Apple Push Notification service (APNs) device token — the delivery address for notifications to your device — and the Apple environment (production or test),</li>
+      <li>your schedule: frequency and time,</li>
+      <li>your time zone (for example “Europe/Berlin”) — a coarse indication of location,</li>
+      <li>your language; only “de” or “en” is stored.</li>
+    </ul>
+    <p>
+      Your library, an account, your name, an email address or an advertising ID are not included. The server stores
+      these details in its database, together with the next scheduled time, the token's status and timestamps. If your
+      time zone or language changes, the app sends the new values the next time you open it. When a new catalog
+      highlight is available at your scheduled time, the server sends the notification through APNs to Apple, which
+      delivers it. For this it records which game was announced to which installation.
+    </p>
+    <p>
+      <strong>Turning them off.</strong> When you turn the notifications off in the app, the app tells the server — it
+      needs neither the token nor iOS permission for that — and no further notifications are scheduled. If you revoke
+      permission in iOS Settings, the app also turns the registration off the next time you open it. If the server
+      cannot be reached, the app retries the next time you open it; until then, notifications may still arrive.
+      Turning them off does not delete the record: the installation ID, the last device token sent and the schedule
+      remain stored, marked as off.
+    </p>
+    <p>
+      <strong>Deletion.</strong> The server deletes the record together with its delivery history 180 days after the
+      app's last contact with that record. Contact also includes the app checking the state of an existing registration
+      when you open it — even one that is turned off. Delivery history entries are additionally deleted 30 days after
+      their last change. There is no option to delete the record immediately from within the app, and deleting the app
+      does not remove it immediately either. On request I will delete it sooner: send me the registration ID the app
+      shows under Discovery Notifications.
+    </p>
+    <p>
+      Legal basis: Art. 6(1)(b) GDPR (providing the functionality you requested).
+    </p>
+  </section>
+
+  <section>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> 12. This website</h2>
     <p>
       This website is static and hosted on GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA
       94107, USA). When you visit it, the hosting provider processes technical connection data — IP address, time of
@@ -277,8 +348,8 @@
       your device.
     </p>
     <p>
-      <strong>Video on the home page.</strong> The teaser on the home page is first shown only as a preview image, which
-      is also served from this site. Only when you click “play” is the YouTube player loaded in privacy-enhanced mode
+      <strong>Videos on the home page.</strong> The videos on the home page are first shown only as preview images, which
+      are also served from this site. Only when you click “play” is the YouTube player loaded in privacy-enhanced mode
       (<strong>youtube-nocookie.com</strong>). Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland)
       then receives your IP address and technical data about your browser, and YouTube may set its own cookies or similar
       storage during playback. The legal basis is your consent given by clicking (Art. 6(1)(a) GDPR, § 25(1) TDDDG);
@@ -288,12 +359,13 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 12. Recipients and transfers outside the EU</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg> 13. Recipients and transfers outside the EU</h2>
     <ul>
-      <li><strong>Apple</strong> — iCloud sync, App Store distribution, payment processing.</li>
+      <li><strong>Apple</strong> — iCloud sync, delivery of Discovery notifications (APNs), App Store distribution, payment processing.</li>
       <li><strong>RevenueCat, Inc.</strong> — store client for the Pro subscription.</li>
-      <li><strong>Vercel Inc.</strong> — hosting of the catalog service and of the published list pages.</li>
-      <li><strong>Neon</strong> — the database behind the published lists, obtained through Vercel.</li>
+      <li><strong>Hudson Heavy Industries Ltd (Kickstart Exchange)</strong>, United Kingdom — ad banner in the free version; <strong>Cloudflare, Inc.</strong> as its network and security provider.</li>
+      <li><strong>Vercel Inc.</strong> — hosting of the catalog service, the published list pages and the Discovery notification service.</li>
+      <li><strong>Neon</strong> — the database behind the published lists and Discovery notifications, obtained through Vercel.</li>
       <li><strong>Google</strong> — title lookup for a shared YouTube link (youtube.com oEmbed).</li>
       <li><strong>The operator of a page you share</strong> — link preview through Apple's LinkPresentation.</li>
       <li><strong>Twitch Interactive, Inc.</strong> — the IGDB image server that delivers cover art.</li>
@@ -302,22 +374,26 @@
     </ul>
     <p>
       These providers may process data in the USA. The transfers are based on the EU standard contractual clauses and,
-      where applicable, the EU–US Data Privacy Framework. No data is passed on for advertising purposes, and nothing is sold.
+      where applicable, the EU–US Data Privacy Framework. Apart from the data involved in the free version's ad banner
+      described in section 7, no data is passed on for advertising purposes, and nothing is sold.
     </p>
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 13. Retention and your rights</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> 14. Retention and your rights</h2>
     <p>
       Library data is kept for as long as you keep it in the app. A list you published stays on the server until you
-      withdraw it; withdrawing deletes the record. Catalog requests are processed to answer them; server logs at the
+      withdraw it; withdrawing deletes the record. Discovery notifications follow the periods in section 11, and the ad
+      banner follows Kickstart Exchange's information in section 7. Catalog requests are processed to answer them; server logs at the
       hosting providers are deleted according to their own retention periods (typically a few days to weeks).
     </p>
     <p>
       You have the right to information (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing
       (Art. 18), data portability (Art. 20) and to object (Art. 21 GDPR). One email to
-      <a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a> is enough. Because the app
-      stores no personal data on my side, a request for information will usually be answered with exactly that.
+      <a href="mailto:info@hildel.com?subject=Games%20Bucket%20List">info@hildel.com</a> is enough. Apart from published
+      lists and the details for Discovery notifications, the app stores no personal data on my side. Because neither is
+      linked to your name, I need the list's link or the registration ID to answer a request for information or
+      erasure.
     </p>
     <p>
       You also have the right to lodge a complaint with a supervisory authority — for me that is the
@@ -326,7 +402,7 @@
   </section>
 
   <section>
-    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 14. Changes to this policy</h2>
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> 15. Changes to this policy</h2>
     <p>
       If the app gains features that change how data is handled, this page will be updated before those features ship.
       The date at the top always shows the current version.
